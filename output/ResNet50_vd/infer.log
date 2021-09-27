@@ -1,0 +1,2124 @@
+[2021/09/27 11:34:45] root INFO: 
+===========================================================
+==        PaddleClas is powered by PaddlePaddle !        ==
+===========================================================
+==                                                       ==
+==   For more info please go to the following website.   ==
+==                                                       ==
+==       https://github.com/PaddlePaddle/PaddleClas      ==
+===========================================================
+
+[2021/09/27 11:34:45] root INFO: Arch : 
+[2021/09/27 11:34:45] root INFO:     name : ResNet50_vd
+[2021/09/27 11:34:45] root INFO: DataLoader : 
+[2021/09/27 11:34:45] root INFO:     Eval : 
+[2021/09/27 11:34:45] root INFO:         dataset : 
+[2021/09/27 11:34:45] root INFO:             cls_label_path : ./dataset/val_list.txt
+[2021/09/27 11:34:45] root INFO:             image_root : ./dataset/
+[2021/09/27 11:34:45] root INFO:             name : ImageNetDataset
+[2021/09/27 11:34:45] root INFO:             transform_ops : 
+[2021/09/27 11:34:45] root INFO:                 DecodeImage : 
+[2021/09/27 11:34:45] root INFO:                     channel_first : False
+[2021/09/27 11:34:45] root INFO:                     to_rgb : True
+[2021/09/27 11:34:45] root INFO:                 ResizeImage : 
+[2021/09/27 11:34:45] root INFO:                     resize_short : 256
+[2021/09/27 11:34:45] root INFO:                 CropImage : 
+[2021/09/27 11:34:45] root INFO:                     size : 224
+[2021/09/27 11:34:45] root INFO:                 NormalizeImage : 
+[2021/09/27 11:34:45] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 11:34:45] root INFO:                     order : 
+[2021/09/27 11:34:45] root INFO:                     scale : 1.0/255.0
+[2021/09/27 11:34:45] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 11:34:45] root INFO:         loader : 
+[2021/09/27 11:34:45] root INFO:             num_workers : 0
+[2021/09/27 11:34:45] root INFO:             use_shared_memory : True
+[2021/09/27 11:34:45] root INFO:         sampler : 
+[2021/09/27 11:34:45] root INFO:             batch_size : 64
+[2021/09/27 11:34:45] root INFO:             drop_last : False
+[2021/09/27 11:34:45] root INFO:             name : DistributedBatchSampler
+[2021/09/27 11:34:45] root INFO:             shuffle : False
+[2021/09/27 11:34:45] root INFO:     Train : 
+[2021/09/27 11:34:45] root INFO:         dataset : 
+[2021/09/27 11:34:45] root INFO:             cls_label_path : ./dataset/train_list.txt
+[2021/09/27 11:34:45] root INFO:             image_root : ./dataset/
+[2021/09/27 11:34:45] root INFO:             name : ImageNetDataset
+[2021/09/27 11:34:45] root INFO:             transform_ops : 
+[2021/09/27 11:34:45] root INFO:                 DecodeImage : 
+[2021/09/27 11:34:45] root INFO:                     channel_first : False
+[2021/09/27 11:34:45] root INFO:                     to_rgb : True
+[2021/09/27 11:34:45] root INFO:                 RandCropImage : 
+[2021/09/27 11:34:45] root INFO:                     size : 224
+[2021/09/27 11:34:45] root INFO:                 RandFlipImage : 
+[2021/09/27 11:34:45] root INFO:                     flip_code : 1
+[2021/09/27 11:34:45] root INFO:                 NormalizeImage : 
+[2021/09/27 11:34:45] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 11:34:45] root INFO:                     order : 
+[2021/09/27 11:34:45] root INFO:                     scale : 1.0/255.0
+[2021/09/27 11:34:45] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 11:34:45] root INFO:         loader : 
+[2021/09/27 11:34:45] root INFO:             num_workers : 0
+[2021/09/27 11:34:45] root INFO:             use_shared_memory : True
+[2021/09/27 11:34:45] root INFO:         sampler : 
+[2021/09/27 11:34:45] root INFO:             batch_size : 32
+[2021/09/27 11:34:45] root INFO:             drop_last : False
+[2021/09/27 11:34:45] root INFO:             name : DistributedBatchSampler
+[2021/09/27 11:34:45] root INFO:             shuffle : True
+[2021/09/27 11:34:45] root INFO: Global : 
+[2021/09/27 11:34:45] root INFO:     checkpoints : None
+[2021/09/27 11:34:45] root INFO:     class_num : 5
+[2021/09/27 11:34:45] root INFO:     device : cpu
+[2021/09/27 11:34:45] root INFO:     epochs : 100
+[2021/09/27 11:34:45] root INFO:     eval_during_train : True
+[2021/09/27 11:34:45] root INFO:     eval_interval : 10
+[2021/09/27 11:34:45] root INFO:     image_shape : [3, 224, 224]
+[2021/09/27 11:34:45] root INFO:     output_dir : ./output/
+[2021/09/27 11:34:45] root INFO:     pretrained_model : ./output/ResNet50_vd/latest/latest
+[2021/09/27 11:34:45] root INFO:     print_batch_step : 10
+[2021/09/27 11:34:45] root INFO:     save_inference_dir : ./inference
+[2021/09/27 11:34:45] root INFO:     save_interval : 1
+[2021/09/27 11:34:45] root INFO:     use_visualdl : False
+[2021/09/27 11:34:45] root INFO: Infer : 
+[2021/09/27 11:34:45] root INFO:     PostProcess : 
+[2021/09/27 11:34:45] root INFO:         class_id_map_file : ./dataset/labels.txt
+[2021/09/27 11:34:45] root INFO:         name : Topk
+[2021/09/27 11:34:45] root INFO:         topk : 1
+[2021/09/27 11:34:45] root INFO:     batch_size : 10
+[2021/09/27 11:34:45] root INFO:     infer_imgs : ./PaddleClas/demo/a.jpg
+[2021/09/27 11:34:45] root INFO:     transforms : 
+[2021/09/27 11:34:45] root INFO:         DecodeImage : 
+[2021/09/27 11:34:45] root INFO:             channel_first : False
+[2021/09/27 11:34:45] root INFO:             to_rgb : True
+[2021/09/27 11:34:45] root INFO:         ResizeImage : 
+[2021/09/27 11:34:45] root INFO:             resize_short : 256
+[2021/09/27 11:34:45] root INFO:         CropImage : 
+[2021/09/27 11:34:45] root INFO:             size : 224
+[2021/09/27 11:34:45] root INFO:         NormalizeImage : 
+[2021/09/27 11:34:45] root INFO:             mean : [0.485, 0.456, 0.406]
+[2021/09/27 11:34:45] root INFO:             order : 
+[2021/09/27 11:34:45] root INFO:             scale : 1.0/255.0
+[2021/09/27 11:34:45] root INFO:             std : [0.229, 0.224, 0.225]
+[2021/09/27 11:34:45] root INFO:         ToCHWImage : None
+[2021/09/27 11:34:45] root INFO: Loss : 
+[2021/09/27 11:34:45] root INFO:     Eval : 
+[2021/09/27 11:34:45] root INFO:         CELoss : 
+[2021/09/27 11:34:45] root INFO:             weight : 1.0
+[2021/09/27 11:34:45] root INFO:     Train : 
+[2021/09/27 11:34:45] root INFO:         CELoss : 
+[2021/09/27 11:34:45] root INFO:             weight : 1.0
+[2021/09/27 11:34:45] root INFO: Metric : 
+[2021/09/27 11:34:45] root INFO:     Eval : 
+[2021/09/27 11:34:45] root INFO:         TopkAcc : 
+[2021/09/27 11:34:45] root INFO:             topk : [1, 5]
+[2021/09/27 11:34:45] root INFO:     Train : 
+[2021/09/27 11:34:45] root INFO:         TopkAcc : 
+[2021/09/27 11:34:45] root INFO:             topk : [1, 5]
+[2021/09/27 11:34:45] root INFO: Optimizer : 
+[2021/09/27 11:34:45] root INFO:     lr : 
+[2021/09/27 11:34:45] root INFO:         learning_rate : 0.0125
+[2021/09/27 11:34:45] root INFO:         name : Cosine
+[2021/09/27 11:34:45] root INFO:         warmup_epoch : 5
+[2021/09/27 11:34:45] root INFO:     momentum : 0.9
+[2021/09/27 11:34:45] root INFO:     name : Momentum
+[2021/09/27 11:34:45] root INFO:     regularizer : 
+[2021/09/27 11:34:45] root INFO:         coeff : 1e-05
+[2021/09/27 11:34:45] root INFO:         name : L2
+[2021/09/27 11:35:12] root INFO: 
+===========================================================
+==        PaddleClas is powered by PaddlePaddle !        ==
+===========================================================
+==                                                       ==
+==   For more info please go to the following website.   ==
+==                                                       ==
+==       https://github.com/PaddlePaddle/PaddleClas      ==
+===========================================================
+
+[2021/09/27 11:35:12] root INFO: Arch : 
+[2021/09/27 11:35:12] root INFO:     name : ResNet50_vd
+[2021/09/27 11:35:12] root INFO: DataLoader : 
+[2021/09/27 11:35:12] root INFO:     Eval : 
+[2021/09/27 11:35:12] root INFO:         dataset : 
+[2021/09/27 11:35:12] root INFO:             cls_label_path : ./dataset/val_list.txt
+[2021/09/27 11:35:12] root INFO:             image_root : ./dataset/
+[2021/09/27 11:35:12] root INFO:             name : ImageNetDataset
+[2021/09/27 11:35:12] root INFO:             transform_ops : 
+[2021/09/27 11:35:12] root INFO:                 DecodeImage : 
+[2021/09/27 11:35:12] root INFO:                     channel_first : False
+[2021/09/27 11:35:12] root INFO:                     to_rgb : True
+[2021/09/27 11:35:12] root INFO:                 ResizeImage : 
+[2021/09/27 11:35:12] root INFO:                     resize_short : 256
+[2021/09/27 11:35:12] root INFO:                 CropImage : 
+[2021/09/27 11:35:12] root INFO:                     size : 224
+[2021/09/27 11:35:12] root INFO:                 NormalizeImage : 
+[2021/09/27 11:35:12] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 11:35:12] root INFO:                     order : 
+[2021/09/27 11:35:12] root INFO:                     scale : 1.0/255.0
+[2021/09/27 11:35:12] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 11:35:12] root INFO:         loader : 
+[2021/09/27 11:35:12] root INFO:             num_workers : 0
+[2021/09/27 11:35:12] root INFO:             use_shared_memory : True
+[2021/09/27 11:35:12] root INFO:         sampler : 
+[2021/09/27 11:35:12] root INFO:             batch_size : 64
+[2021/09/27 11:35:12] root INFO:             drop_last : False
+[2021/09/27 11:35:12] root INFO:             name : DistributedBatchSampler
+[2021/09/27 11:35:12] root INFO:             shuffle : False
+[2021/09/27 11:35:12] root INFO:     Train : 
+[2021/09/27 11:35:12] root INFO:         dataset : 
+[2021/09/27 11:35:12] root INFO:             cls_label_path : ./dataset/train_list.txt
+[2021/09/27 11:35:12] root INFO:             image_root : ./dataset/
+[2021/09/27 11:35:12] root INFO:             name : ImageNetDataset
+[2021/09/27 11:35:12] root INFO:             transform_ops : 
+[2021/09/27 11:35:12] root INFO:                 DecodeImage : 
+[2021/09/27 11:35:12] root INFO:                     channel_first : False
+[2021/09/27 11:35:12] root INFO:                     to_rgb : True
+[2021/09/27 11:35:12] root INFO:                 RandCropImage : 
+[2021/09/27 11:35:12] root INFO:                     size : 224
+[2021/09/27 11:35:12] root INFO:                 RandFlipImage : 
+[2021/09/27 11:35:12] root INFO:                     flip_code : 1
+[2021/09/27 11:35:12] root INFO:                 NormalizeImage : 
+[2021/09/27 11:35:12] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 11:35:12] root INFO:                     order : 
+[2021/09/27 11:35:12] root INFO:                     scale : 1.0/255.0
+[2021/09/27 11:35:12] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 11:35:12] root INFO:         loader : 
+[2021/09/27 11:35:12] root INFO:             num_workers : 0
+[2021/09/27 11:35:12] root INFO:             use_shared_memory : True
+[2021/09/27 11:35:12] root INFO:         sampler : 
+[2021/09/27 11:35:12] root INFO:             batch_size : 32
+[2021/09/27 11:35:12] root INFO:             drop_last : False
+[2021/09/27 11:35:12] root INFO:             name : DistributedBatchSampler
+[2021/09/27 11:35:12] root INFO:             shuffle : True
+[2021/09/27 11:35:12] root INFO: Global : 
+[2021/09/27 11:35:12] root INFO:     checkpoints : None
+[2021/09/27 11:35:12] root INFO:     class_num : 5
+[2021/09/27 11:35:12] root INFO:     device : cpu
+[2021/09/27 11:35:12] root INFO:     epochs : 100
+[2021/09/27 11:35:12] root INFO:     eval_during_train : True
+[2021/09/27 11:35:12] root INFO:     eval_interval : 10
+[2021/09/27 11:35:12] root INFO:     image_shape : [3, 224, 224]
+[2021/09/27 11:35:12] root INFO:     output_dir : ./output/
+[2021/09/27 11:35:12] root INFO:     pretrained_model : ./PaddleClas/output/ResNet50_vd/latest/latest
+[2021/09/27 11:35:12] root INFO:     print_batch_step : 10
+[2021/09/27 11:35:12] root INFO:     save_inference_dir : ./inference
+[2021/09/27 11:35:12] root INFO:     save_interval : 1
+[2021/09/27 11:35:12] root INFO:     use_visualdl : False
+[2021/09/27 11:35:12] root INFO: Infer : 
+[2021/09/27 11:35:12] root INFO:     PostProcess : 
+[2021/09/27 11:35:12] root INFO:         class_id_map_file : ./dataset/labels.txt
+[2021/09/27 11:35:12] root INFO:         name : Topk
+[2021/09/27 11:35:12] root INFO:         topk : 1
+[2021/09/27 11:35:12] root INFO:     batch_size : 10
+[2021/09/27 11:35:12] root INFO:     infer_imgs : ./PaddleClas/demo/a.jpg
+[2021/09/27 11:35:12] root INFO:     transforms : 
+[2021/09/27 11:35:12] root INFO:         DecodeImage : 
+[2021/09/27 11:35:12] root INFO:             channel_first : False
+[2021/09/27 11:35:12] root INFO:             to_rgb : True
+[2021/09/27 11:35:12] root INFO:         ResizeImage : 
+[2021/09/27 11:35:12] root INFO:             resize_short : 256
+[2021/09/27 11:35:12] root INFO:         CropImage : 
+[2021/09/27 11:35:12] root INFO:             size : 224
+[2021/09/27 11:35:12] root INFO:         NormalizeImage : 
+[2021/09/27 11:35:12] root INFO:             mean : [0.485, 0.456, 0.406]
+[2021/09/27 11:35:12] root INFO:             order : 
+[2021/09/27 11:35:12] root INFO:             scale : 1.0/255.0
+[2021/09/27 11:35:12] root INFO:             std : [0.229, 0.224, 0.225]
+[2021/09/27 11:35:12] root INFO:         ToCHWImage : None
+[2021/09/27 11:35:12] root INFO: Loss : 
+[2021/09/27 11:35:12] root INFO:     Eval : 
+[2021/09/27 11:35:12] root INFO:         CELoss : 
+[2021/09/27 11:35:12] root INFO:             weight : 1.0
+[2021/09/27 11:35:12] root INFO:     Train : 
+[2021/09/27 11:35:12] root INFO:         CELoss : 
+[2021/09/27 11:35:12] root INFO:             weight : 1.0
+[2021/09/27 11:35:12] root INFO: Metric : 
+[2021/09/27 11:35:12] root INFO:     Eval : 
+[2021/09/27 11:35:12] root INFO:         TopkAcc : 
+[2021/09/27 11:35:12] root INFO:             topk : [1, 5]
+[2021/09/27 11:35:12] root INFO:     Train : 
+[2021/09/27 11:35:12] root INFO:         TopkAcc : 
+[2021/09/27 11:35:12] root INFO:             topk : [1, 5]
+[2021/09/27 11:35:12] root INFO: Optimizer : 
+[2021/09/27 11:35:12] root INFO:     lr : 
+[2021/09/27 11:35:12] root INFO:         learning_rate : 0.0125
+[2021/09/27 11:35:12] root INFO:         name : Cosine
+[2021/09/27 11:35:12] root INFO:         warmup_epoch : 5
+[2021/09/27 11:35:12] root INFO:     momentum : 0.9
+[2021/09/27 11:35:12] root INFO:     name : Momentum
+[2021/09/27 11:35:12] root INFO:     regularizer : 
+[2021/09/27 11:35:12] root INFO:         coeff : 1e-05
+[2021/09/27 11:35:12] root INFO:         name : L2
+[2021/09/27 11:35:14] root INFO: train with paddle 2.1.3 and device CPUPlace
+[2021/09/27 11:36:30] root INFO: 
+===========================================================
+==        PaddleClas is powered by PaddlePaddle !        ==
+===========================================================
+==                                                       ==
+==   For more info please go to the following website.   ==
+==                                                       ==
+==       https://github.com/PaddlePaddle/PaddleClas      ==
+===========================================================
+
+[2021/09/27 11:36:30] root INFO: Arch : 
+[2021/09/27 11:36:30] root INFO:     name : ResNet50_vd
+[2021/09/27 11:36:30] root INFO: DataLoader : 
+[2021/09/27 11:36:30] root INFO:     Eval : 
+[2021/09/27 11:36:30] root INFO:         dataset : 
+[2021/09/27 11:36:30] root INFO:             cls_label_path : ./dataset/val_list.txt
+[2021/09/27 11:36:30] root INFO:             image_root : ./dataset/
+[2021/09/27 11:36:30] root INFO:             name : ImageNetDataset
+[2021/09/27 11:36:30] root INFO:             transform_ops : 
+[2021/09/27 11:36:30] root INFO:                 DecodeImage : 
+[2021/09/27 11:36:30] root INFO:                     channel_first : False
+[2021/09/27 11:36:30] root INFO:                     to_rgb : True
+[2021/09/27 11:36:30] root INFO:                 ResizeImage : 
+[2021/09/27 11:36:30] root INFO:                     resize_short : 256
+[2021/09/27 11:36:30] root INFO:                 CropImage : 
+[2021/09/27 11:36:30] root INFO:                     size : 224
+[2021/09/27 11:36:30] root INFO:                 NormalizeImage : 
+[2021/09/27 11:36:30] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 11:36:30] root INFO:                     order : 
+[2021/09/27 11:36:30] root INFO:                     scale : 1.0/255.0
+[2021/09/27 11:36:30] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 11:36:30] root INFO:         loader : 
+[2021/09/27 11:36:30] root INFO:             num_workers : 0
+[2021/09/27 11:36:30] root INFO:             use_shared_memory : True
+[2021/09/27 11:36:30] root INFO:         sampler : 
+[2021/09/27 11:36:30] root INFO:             batch_size : 64
+[2021/09/27 11:36:30] root INFO:             drop_last : False
+[2021/09/27 11:36:30] root INFO:             name : DistributedBatchSampler
+[2021/09/27 11:36:30] root INFO:             shuffle : False
+[2021/09/27 11:36:30] root INFO:     Train : 
+[2021/09/27 11:36:30] root INFO:         dataset : 
+[2021/09/27 11:36:30] root INFO:             cls_label_path : ./dataset/train_list.txt
+[2021/09/27 11:36:30] root INFO:             image_root : ./dataset/
+[2021/09/27 11:36:30] root INFO:             name : ImageNetDataset
+[2021/09/27 11:36:30] root INFO:             transform_ops : 
+[2021/09/27 11:36:30] root INFO:                 DecodeImage : 
+[2021/09/27 11:36:30] root INFO:                     channel_first : False
+[2021/09/27 11:36:30] root INFO:                     to_rgb : True
+[2021/09/27 11:36:30] root INFO:                 RandCropImage : 
+[2021/09/27 11:36:30] root INFO:                     size : 224
+[2021/09/27 11:36:30] root INFO:                 RandFlipImage : 
+[2021/09/27 11:36:30] root INFO:                     flip_code : 1
+[2021/09/27 11:36:30] root INFO:                 NormalizeImage : 
+[2021/09/27 11:36:30] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 11:36:30] root INFO:                     order : 
+[2021/09/27 11:36:30] root INFO:                     scale : 1.0/255.0
+[2021/09/27 11:36:30] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 11:36:30] root INFO:         loader : 
+[2021/09/27 11:36:30] root INFO:             num_workers : 0
+[2021/09/27 11:36:30] root INFO:             use_shared_memory : True
+[2021/09/27 11:36:30] root INFO:         sampler : 
+[2021/09/27 11:36:30] root INFO:             batch_size : 32
+[2021/09/27 11:36:30] root INFO:             drop_last : False
+[2021/09/27 11:36:30] root INFO:             name : DistributedBatchSampler
+[2021/09/27 11:36:30] root INFO:             shuffle : True
+[2021/09/27 11:36:30] root INFO: Global : 
+[2021/09/27 11:36:30] root INFO:     checkpoints : None
+[2021/09/27 11:36:30] root INFO:     class_num : 5
+[2021/09/27 11:36:30] root INFO:     device : cpu
+[2021/09/27 11:36:30] root INFO:     epochs : 100
+[2021/09/27 11:36:30] root INFO:     eval_during_train : True
+[2021/09/27 11:36:30] root INFO:     eval_interval : 10
+[2021/09/27 11:36:30] root INFO:     image_shape : [3, 224, 224]
+[2021/09/27 11:36:30] root INFO:     output_dir : ./output/
+[2021/09/27 11:36:30] root INFO:     pretrained_model : ./PaddleClas/output/ResNet50_vd/latest/latest
+[2021/09/27 11:36:30] root INFO:     print_batch_step : 10
+[2021/09/27 11:36:30] root INFO:     save_inference_dir : ./inference
+[2021/09/27 11:36:30] root INFO:     save_interval : 1
+[2021/09/27 11:36:30] root INFO:     use_visualdl : False
+[2021/09/27 11:36:30] root INFO: Infer : 
+[2021/09/27 11:36:30] root INFO:     PostProcess : 
+[2021/09/27 11:36:30] root INFO:         class_id_map_file : ./PaddleClas/dataset/labels.txt
+[2021/09/27 11:36:30] root INFO:         name : Topk
+[2021/09/27 11:36:30] root INFO:         topk : 1
+[2021/09/27 11:36:30] root INFO:     batch_size : 10
+[2021/09/27 11:36:30] root INFO:     infer_imgs : ./PaddleClas/demo/a.jpg
+[2021/09/27 11:36:30] root INFO:     transforms : 
+[2021/09/27 11:36:30] root INFO:         DecodeImage : 
+[2021/09/27 11:36:30] root INFO:             channel_first : False
+[2021/09/27 11:36:30] root INFO:             to_rgb : True
+[2021/09/27 11:36:30] root INFO:         ResizeImage : 
+[2021/09/27 11:36:30] root INFO:             resize_short : 256
+[2021/09/27 11:36:30] root INFO:         CropImage : 
+[2021/09/27 11:36:30] root INFO:             size : 224
+[2021/09/27 11:36:30] root INFO:         NormalizeImage : 
+[2021/09/27 11:36:30] root INFO:             mean : [0.485, 0.456, 0.406]
+[2021/09/27 11:36:30] root INFO:             order : 
+[2021/09/27 11:36:30] root INFO:             scale : 1.0/255.0
+[2021/09/27 11:36:30] root INFO:             std : [0.229, 0.224, 0.225]
+[2021/09/27 11:36:30] root INFO:         ToCHWImage : None
+[2021/09/27 11:36:30] root INFO: Loss : 
+[2021/09/27 11:36:30] root INFO:     Eval : 
+[2021/09/27 11:36:30] root INFO:         CELoss : 
+[2021/09/27 11:36:30] root INFO:             weight : 1.0
+[2021/09/27 11:36:30] root INFO:     Train : 
+[2021/09/27 11:36:30] root INFO:         CELoss : 
+[2021/09/27 11:36:30] root INFO:             weight : 1.0
+[2021/09/27 11:36:30] root INFO: Metric : 
+[2021/09/27 11:36:30] root INFO:     Eval : 
+[2021/09/27 11:36:30] root INFO:         TopkAcc : 
+[2021/09/27 11:36:30] root INFO:             topk : [1, 5]
+[2021/09/27 11:36:30] root INFO:     Train : 
+[2021/09/27 11:36:30] root INFO:         TopkAcc : 
+[2021/09/27 11:36:30] root INFO:             topk : [1, 5]
+[2021/09/27 11:36:30] root INFO: Optimizer : 
+[2021/09/27 11:36:30] root INFO:     lr : 
+[2021/09/27 11:36:30] root INFO:         learning_rate : 0.0125
+[2021/09/27 11:36:30] root INFO:         name : Cosine
+[2021/09/27 11:36:30] root INFO:         warmup_epoch : 5
+[2021/09/27 11:36:30] root INFO:     momentum : 0.9
+[2021/09/27 11:36:30] root INFO:     name : Momentum
+[2021/09/27 11:36:30] root INFO:     regularizer : 
+[2021/09/27 11:36:30] root INFO:         coeff : 1e-05
+[2021/09/27 11:36:30] root INFO:         name : L2
+[2021/09/27 11:36:32] root INFO: train with paddle 2.1.3 and device CPUPlace
+[2021/09/27 11:51:47] root INFO: 
+===========================================================
+==        PaddleClas is powered by PaddlePaddle !        ==
+===========================================================
+==                                                       ==
+==   For more info please go to the following website.   ==
+==                                                       ==
+==       https://github.com/PaddlePaddle/PaddleClas      ==
+===========================================================
+
+[2021/09/27 11:51:47] root INFO: Arch : 
+[2021/09/27 11:51:47] root INFO:     name : ResNet50_vd
+[2021/09/27 11:51:47] root INFO: DataLoader : 
+[2021/09/27 11:51:47] root INFO:     Eval : 
+[2021/09/27 11:51:47] root INFO:         dataset : 
+[2021/09/27 11:51:47] root INFO:             cls_label_path : ./dataset/val_list.txt
+[2021/09/27 11:51:47] root INFO:             image_root : ./dataset/
+[2021/09/27 11:51:47] root INFO:             name : ImageNetDataset
+[2021/09/27 11:51:47] root INFO:             transform_ops : 
+[2021/09/27 11:51:47] root INFO:                 DecodeImage : 
+[2021/09/27 11:51:47] root INFO:                     channel_first : False
+[2021/09/27 11:51:47] root INFO:                     to_rgb : True
+[2021/09/27 11:51:47] root INFO:                 ResizeImage : 
+[2021/09/27 11:51:47] root INFO:                     resize_short : 256
+[2021/09/27 11:51:47] root INFO:                 CropImage : 
+[2021/09/27 11:51:47] root INFO:                     size : 224
+[2021/09/27 11:51:47] root INFO:                 NormalizeImage : 
+[2021/09/27 11:51:47] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 11:51:47] root INFO:                     order : 
+[2021/09/27 11:51:47] root INFO:                     scale : 1.0/255.0
+[2021/09/27 11:51:47] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 11:51:47] root INFO:         loader : 
+[2021/09/27 11:51:47] root INFO:             num_workers : 0
+[2021/09/27 11:51:47] root INFO:             use_shared_memory : True
+[2021/09/27 11:51:47] root INFO:         sampler : 
+[2021/09/27 11:51:47] root INFO:             batch_size : 64
+[2021/09/27 11:51:47] root INFO:             drop_last : False
+[2021/09/27 11:51:47] root INFO:             name : DistributedBatchSampler
+[2021/09/27 11:51:47] root INFO:             shuffle : False
+[2021/09/27 11:51:47] root INFO:     Train : 
+[2021/09/27 11:51:47] root INFO:         dataset : 
+[2021/09/27 11:51:47] root INFO:             cls_label_path : ./dataset/train_list.txt
+[2021/09/27 11:51:47] root INFO:             image_root : ./dataset/
+[2021/09/27 11:51:47] root INFO:             name : ImageNetDataset
+[2021/09/27 11:51:47] root INFO:             transform_ops : 
+[2021/09/27 11:51:47] root INFO:                 DecodeImage : 
+[2021/09/27 11:51:47] root INFO:                     channel_first : False
+[2021/09/27 11:51:47] root INFO:                     to_rgb : True
+[2021/09/27 11:51:47] root INFO:                 RandCropImage : 
+[2021/09/27 11:51:47] root INFO:                     size : 224
+[2021/09/27 11:51:47] root INFO:                 RandFlipImage : 
+[2021/09/27 11:51:47] root INFO:                     flip_code : 1
+[2021/09/27 11:51:47] root INFO:                 NormalizeImage : 
+[2021/09/27 11:51:47] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 11:51:47] root INFO:                     order : 
+[2021/09/27 11:51:47] root INFO:                     scale : 1.0/255.0
+[2021/09/27 11:51:47] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 11:51:47] root INFO:         loader : 
+[2021/09/27 11:51:47] root INFO:             num_workers : 0
+[2021/09/27 11:51:47] root INFO:             use_shared_memory : True
+[2021/09/27 11:51:47] root INFO:         sampler : 
+[2021/09/27 11:51:47] root INFO:             batch_size : 32
+[2021/09/27 11:51:47] root INFO:             drop_last : False
+[2021/09/27 11:51:47] root INFO:             name : DistributedBatchSampler
+[2021/09/27 11:51:47] root INFO:             shuffle : True
+[2021/09/27 11:51:47] root INFO: Global : 
+[2021/09/27 11:51:47] root INFO:     checkpoints : None
+[2021/09/27 11:51:47] root INFO:     class_num : 5
+[2021/09/27 11:51:47] root INFO:     device : cpu
+[2021/09/27 11:51:47] root INFO:     epochs : 100
+[2021/09/27 11:51:47] root INFO:     eval_during_train : True
+[2021/09/27 11:51:47] root INFO:     eval_interval : 10
+[2021/09/27 11:51:47] root INFO:     image_shape : [3, 224, 224]
+[2021/09/27 11:51:47] root INFO:     output_dir : ./output/
+[2021/09/27 11:51:47] root INFO:     pretrained_model : ./PaddleClas/output/ResNet50_vd/latest/latest
+[2021/09/27 11:51:47] root INFO:     print_batch_step : 10
+[2021/09/27 11:51:47] root INFO:     save_inference_dir : ./inference
+[2021/09/27 11:51:47] root INFO:     save_interval : 1
+[2021/09/27 11:51:47] root INFO:     use_visualdl : False
+[2021/09/27 11:51:47] root INFO: Infer : 
+[2021/09/27 11:51:47] root INFO:     PostProcess : 
+[2021/09/27 11:51:47] root INFO:         class_id_map_file : ./PaddleClas/dataset/labels.txt
+[2021/09/27 11:51:47] root INFO:         name : Topk
+[2021/09/27 11:51:47] root INFO:         topk : 1
+[2021/09/27 11:51:47] root INFO:     batch_size : 10
+[2021/09/27 11:51:47] root INFO:     infer_imgs : ./PaddleClas/demo/a.jpg
+[2021/09/27 11:51:47] root INFO:     transforms : 
+[2021/09/27 11:51:47] root INFO:         DecodeImage : 
+[2021/09/27 11:51:47] root INFO:             channel_first : False
+[2021/09/27 11:51:47] root INFO:             to_rgb : True
+[2021/09/27 11:51:47] root INFO:         ResizeImage : 
+[2021/09/27 11:51:47] root INFO:             resize_short : 256
+[2021/09/27 11:51:47] root INFO:         CropImage : 
+[2021/09/27 11:51:47] root INFO:             size : 224
+[2021/09/27 11:51:47] root INFO:         NormalizeImage : 
+[2021/09/27 11:51:47] root INFO:             mean : [0.485, 0.456, 0.406]
+[2021/09/27 11:51:47] root INFO:             order : 
+[2021/09/27 11:51:47] root INFO:             scale : 1.0/255.0
+[2021/09/27 11:51:47] root INFO:             std : [0.229, 0.224, 0.225]
+[2021/09/27 11:51:47] root INFO:         ToCHWImage : None
+[2021/09/27 11:51:47] root INFO: Loss : 
+[2021/09/27 11:51:47] root INFO:     Eval : 
+[2021/09/27 11:51:47] root INFO:         CELoss : 
+[2021/09/27 11:51:47] root INFO:             weight : 1.0
+[2021/09/27 11:51:47] root INFO:     Train : 
+[2021/09/27 11:51:47] root INFO:         CELoss : 
+[2021/09/27 11:51:47] root INFO:             weight : 1.0
+[2021/09/27 11:51:47] root INFO: Metric : 
+[2021/09/27 11:51:47] root INFO:     Eval : 
+[2021/09/27 11:51:47] root INFO:         TopkAcc : 
+[2021/09/27 11:51:47] root INFO:             topk : [1, 5]
+[2021/09/27 11:51:47] root INFO:     Train : 
+[2021/09/27 11:51:47] root INFO:         TopkAcc : 
+[2021/09/27 11:51:47] root INFO:             topk : [1, 5]
+[2021/09/27 11:51:47] root INFO: Optimizer : 
+[2021/09/27 11:51:47] root INFO:     lr : 
+[2021/09/27 11:51:47] root INFO:         learning_rate : 0.0125
+[2021/09/27 11:51:47] root INFO:         name : Cosine
+[2021/09/27 11:51:47] root INFO:         warmup_epoch : 5
+[2021/09/27 11:51:47] root INFO:     momentum : 0.9
+[2021/09/27 11:51:47] root INFO:     name : Momentum
+[2021/09/27 11:51:47] root INFO:     regularizer : 
+[2021/09/27 11:51:47] root INFO:         coeff : 1e-05
+[2021/09/27 11:51:47] root INFO:         name : L2
+[2021/09/27 11:51:49] root INFO: train with paddle 2.1.3 and device CPUPlace
+[2021/09/27 11:53:48] root INFO: 
+===========================================================
+==        PaddleClas is powered by PaddlePaddle !        ==
+===========================================================
+==                                                       ==
+==   For more info please go to the following website.   ==
+==                                                       ==
+==       https://github.com/PaddlePaddle/PaddleClas      ==
+===========================================================
+
+[2021/09/27 11:53:48] root INFO: Arch : 
+[2021/09/27 11:53:48] root INFO:     name : ResNet50_vd
+[2021/09/27 11:53:48] root INFO: DataLoader : 
+[2021/09/27 11:53:48] root INFO:     Eval : 
+[2021/09/27 11:53:48] root INFO:         dataset : 
+[2021/09/27 11:53:48] root INFO:             cls_label_path : ./dataset/val_list.txt
+[2021/09/27 11:53:48] root INFO:             image_root : ./dataset/
+[2021/09/27 11:53:48] root INFO:             name : ImageNetDataset
+[2021/09/27 11:53:48] root INFO:             transform_ops : 
+[2021/09/27 11:53:48] root INFO:                 DecodeImage : 
+[2021/09/27 11:53:48] root INFO:                     channel_first : False
+[2021/09/27 11:53:48] root INFO:                     to_rgb : True
+[2021/09/27 11:53:48] root INFO:                 ResizeImage : 
+[2021/09/27 11:53:48] root INFO:                     resize_short : 256
+[2021/09/27 11:53:48] root INFO:                 CropImage : 
+[2021/09/27 11:53:48] root INFO:                     size : 224
+[2021/09/27 11:53:48] root INFO:                 NormalizeImage : 
+[2021/09/27 11:53:48] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 11:53:48] root INFO:                     order : 
+[2021/09/27 11:53:48] root INFO:                     scale : 1.0/255.0
+[2021/09/27 11:53:48] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 11:53:48] root INFO:         loader : 
+[2021/09/27 11:53:48] root INFO:             num_workers : 0
+[2021/09/27 11:53:48] root INFO:             use_shared_memory : True
+[2021/09/27 11:53:48] root INFO:         sampler : 
+[2021/09/27 11:53:48] root INFO:             batch_size : 64
+[2021/09/27 11:53:48] root INFO:             drop_last : False
+[2021/09/27 11:53:48] root INFO:             name : DistributedBatchSampler
+[2021/09/27 11:53:48] root INFO:             shuffle : False
+[2021/09/27 11:53:48] root INFO:     Train : 
+[2021/09/27 11:53:48] root INFO:         dataset : 
+[2021/09/27 11:53:48] root INFO:             cls_label_path : ./dataset/train_list.txt
+[2021/09/27 11:53:48] root INFO:             image_root : ./dataset/
+[2021/09/27 11:53:48] root INFO:             name : ImageNetDataset
+[2021/09/27 11:53:48] root INFO:             transform_ops : 
+[2021/09/27 11:53:48] root INFO:                 DecodeImage : 
+[2021/09/27 11:53:48] root INFO:                     channel_first : False
+[2021/09/27 11:53:48] root INFO:                     to_rgb : True
+[2021/09/27 11:53:48] root INFO:                 RandCropImage : 
+[2021/09/27 11:53:48] root INFO:                     size : 224
+[2021/09/27 11:53:48] root INFO:                 RandFlipImage : 
+[2021/09/27 11:53:48] root INFO:                     flip_code : 1
+[2021/09/27 11:53:48] root INFO:                 NormalizeImage : 
+[2021/09/27 11:53:48] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 11:53:48] root INFO:                     order : 
+[2021/09/27 11:53:48] root INFO:                     scale : 1.0/255.0
+[2021/09/27 11:53:48] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 11:53:48] root INFO:         loader : 
+[2021/09/27 11:53:48] root INFO:             num_workers : 0
+[2021/09/27 11:53:48] root INFO:             use_shared_memory : True
+[2021/09/27 11:53:48] root INFO:         sampler : 
+[2021/09/27 11:53:48] root INFO:             batch_size : 32
+[2021/09/27 11:53:48] root INFO:             drop_last : False
+[2021/09/27 11:53:48] root INFO:             name : DistributedBatchSampler
+[2021/09/27 11:53:48] root INFO:             shuffle : True
+[2021/09/27 11:53:48] root INFO: Global : 
+[2021/09/27 11:53:48] root INFO:     checkpoints : None
+[2021/09/27 11:53:48] root INFO:     class_num : 5
+[2021/09/27 11:53:48] root INFO:     device : cpu
+[2021/09/27 11:53:48] root INFO:     epochs : 100
+[2021/09/27 11:53:48] root INFO:     eval_during_train : True
+[2021/09/27 11:53:48] root INFO:     eval_interval : 10
+[2021/09/27 11:53:48] root INFO:     image_shape : [3, 224, 224]
+[2021/09/27 11:53:48] root INFO:     output_dir : ./output/
+[2021/09/27 11:53:48] root INFO:     pretrained_model : ./PaddleClas/output/ResNet50_vd/latest/latest
+[2021/09/27 11:53:48] root INFO:     print_batch_step : 10
+[2021/09/27 11:53:48] root INFO:     save_inference_dir : ./inference
+[2021/09/27 11:53:48] root INFO:     save_interval : 1
+[2021/09/27 11:53:48] root INFO:     use_visualdl : False
+[2021/09/27 11:53:48] root INFO: Infer : 
+[2021/09/27 11:53:48] root INFO:     PostProcess : 
+[2021/09/27 11:53:48] root INFO:         class_id_map_file : ./PaddleClas/dataset/labels.txt
+[2021/09/27 11:53:48] root INFO:         name : Topk
+[2021/09/27 11:53:48] root INFO:         topk : 1
+[2021/09/27 11:53:48] root INFO:     batch_size : 10
+[2021/09/27 11:53:48] root INFO:     infer_imgs : ./PaddleClas/demo/a.jpg
+[2021/09/27 11:53:48] root INFO:     transforms : 
+[2021/09/27 11:53:48] root INFO:         DecodeImage : 
+[2021/09/27 11:53:48] root INFO:             channel_first : False
+[2021/09/27 11:53:48] root INFO:             to_rgb : True
+[2021/09/27 11:53:48] root INFO:         ResizeImage : 
+[2021/09/27 11:53:48] root INFO:             resize_short : 256
+[2021/09/27 11:53:48] root INFO:         CropImage : 
+[2021/09/27 11:53:48] root INFO:             size : 224
+[2021/09/27 11:53:48] root INFO:         NormalizeImage : 
+[2021/09/27 11:53:48] root INFO:             mean : [0.485, 0.456, 0.406]
+[2021/09/27 11:53:48] root INFO:             order : 
+[2021/09/27 11:53:48] root INFO:             scale : 1.0/255.0
+[2021/09/27 11:53:48] root INFO:             std : [0.229, 0.224, 0.225]
+[2021/09/27 11:53:48] root INFO:         ToCHWImage : None
+[2021/09/27 11:53:48] root INFO: Loss : 
+[2021/09/27 11:53:48] root INFO:     Eval : 
+[2021/09/27 11:53:48] root INFO:         CELoss : 
+[2021/09/27 11:53:48] root INFO:             weight : 1.0
+[2021/09/27 11:53:48] root INFO:     Train : 
+[2021/09/27 11:53:48] root INFO:         CELoss : 
+[2021/09/27 11:53:48] root INFO:             weight : 1.0
+[2021/09/27 11:53:48] root INFO: Metric : 
+[2021/09/27 11:53:48] root INFO:     Eval : 
+[2021/09/27 11:53:48] root INFO:         TopkAcc : 
+[2021/09/27 11:53:48] root INFO:             topk : [1, 5]
+[2021/09/27 11:53:48] root INFO:     Train : 
+[2021/09/27 11:53:48] root INFO:         TopkAcc : 
+[2021/09/27 11:53:48] root INFO:             topk : [1, 5]
+[2021/09/27 11:53:48] root INFO: Optimizer : 
+[2021/09/27 11:53:48] root INFO:     lr : 
+[2021/09/27 11:53:48] root INFO:         learning_rate : 0.0125
+[2021/09/27 11:53:48] root INFO:         name : Cosine
+[2021/09/27 11:53:48] root INFO:         warmup_epoch : 5
+[2021/09/27 11:53:48] root INFO:     momentum : 0.9
+[2021/09/27 11:53:48] root INFO:     name : Momentum
+[2021/09/27 11:53:48] root INFO:     regularizer : 
+[2021/09/27 11:53:48] root INFO:         coeff : 1e-05
+[2021/09/27 11:53:48] root INFO:         name : L2
+[2021/09/27 11:53:50] root INFO: train with paddle 2.1.3 and device CPUPlace
+[2021/09/27 11:54:28] root INFO: 
+===========================================================
+==        PaddleClas is powered by PaddlePaddle !        ==
+===========================================================
+==                                                       ==
+==   For more info please go to the following website.   ==
+==                                                       ==
+==       https://github.com/PaddlePaddle/PaddleClas      ==
+===========================================================
+
+[2021/09/27 11:54:28] root INFO: Arch : 
+[2021/09/27 11:54:28] root INFO:     name : ResNet50_vd
+[2021/09/27 11:54:28] root INFO: DataLoader : 
+[2021/09/27 11:54:28] root INFO:     Eval : 
+[2021/09/27 11:54:28] root INFO:         dataset : 
+[2021/09/27 11:54:28] root INFO:             cls_label_path : ./dataset/val_list.txt
+[2021/09/27 11:54:28] root INFO:             image_root : ./dataset/
+[2021/09/27 11:54:28] root INFO:             name : ImageNetDataset
+[2021/09/27 11:54:28] root INFO:             transform_ops : 
+[2021/09/27 11:54:28] root INFO:                 DecodeImage : 
+[2021/09/27 11:54:28] root INFO:                     channel_first : False
+[2021/09/27 11:54:28] root INFO:                     to_rgb : True
+[2021/09/27 11:54:28] root INFO:                 ResizeImage : 
+[2021/09/27 11:54:28] root INFO:                     resize_short : 256
+[2021/09/27 11:54:28] root INFO:                 CropImage : 
+[2021/09/27 11:54:28] root INFO:                     size : 224
+[2021/09/27 11:54:28] root INFO:                 NormalizeImage : 
+[2021/09/27 11:54:28] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 11:54:28] root INFO:                     order : 
+[2021/09/27 11:54:28] root INFO:                     scale : 1.0/255.0
+[2021/09/27 11:54:28] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 11:54:28] root INFO:         loader : 
+[2021/09/27 11:54:28] root INFO:             num_workers : 0
+[2021/09/27 11:54:28] root INFO:             use_shared_memory : True
+[2021/09/27 11:54:28] root INFO:         sampler : 
+[2021/09/27 11:54:28] root INFO:             batch_size : 64
+[2021/09/27 11:54:28] root INFO:             drop_last : False
+[2021/09/27 11:54:28] root INFO:             name : DistributedBatchSampler
+[2021/09/27 11:54:28] root INFO:             shuffle : False
+[2021/09/27 11:54:28] root INFO:     Train : 
+[2021/09/27 11:54:28] root INFO:         dataset : 
+[2021/09/27 11:54:28] root INFO:             cls_label_path : ./dataset/train_list.txt
+[2021/09/27 11:54:28] root INFO:             image_root : ./dataset/
+[2021/09/27 11:54:28] root INFO:             name : ImageNetDataset
+[2021/09/27 11:54:28] root INFO:             transform_ops : 
+[2021/09/27 11:54:28] root INFO:                 DecodeImage : 
+[2021/09/27 11:54:28] root INFO:                     channel_first : False
+[2021/09/27 11:54:28] root INFO:                     to_rgb : True
+[2021/09/27 11:54:28] root INFO:                 RandCropImage : 
+[2021/09/27 11:54:28] root INFO:                     size : 224
+[2021/09/27 11:54:28] root INFO:                 RandFlipImage : 
+[2021/09/27 11:54:28] root INFO:                     flip_code : 1
+[2021/09/27 11:54:28] root INFO:                 NormalizeImage : 
+[2021/09/27 11:54:28] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 11:54:28] root INFO:                     order : 
+[2021/09/27 11:54:28] root INFO:                     scale : 1.0/255.0
+[2021/09/27 11:54:28] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 11:54:28] root INFO:         loader : 
+[2021/09/27 11:54:28] root INFO:             num_workers : 0
+[2021/09/27 11:54:28] root INFO:             use_shared_memory : True
+[2021/09/27 11:54:28] root INFO:         sampler : 
+[2021/09/27 11:54:28] root INFO:             batch_size : 32
+[2021/09/27 11:54:28] root INFO:             drop_last : False
+[2021/09/27 11:54:28] root INFO:             name : DistributedBatchSampler
+[2021/09/27 11:54:28] root INFO:             shuffle : True
+[2021/09/27 11:54:28] root INFO: Global : 
+[2021/09/27 11:54:28] root INFO:     checkpoints : None
+[2021/09/27 11:54:28] root INFO:     class_num : 5
+[2021/09/27 11:54:28] root INFO:     device : cpu
+[2021/09/27 11:54:28] root INFO:     epochs : 100
+[2021/09/27 11:54:28] root INFO:     eval_during_train : True
+[2021/09/27 11:54:28] root INFO:     eval_interval : 10
+[2021/09/27 11:54:28] root INFO:     image_shape : [3, 224, 224]
+[2021/09/27 11:54:28] root INFO:     output_dir : ./output/
+[2021/09/27 11:54:28] root INFO:     pretrained_model : ./PaddleClas/output/ResNet50_vd/latest/latest
+[2021/09/27 11:54:28] root INFO:     print_batch_step : 10
+[2021/09/27 11:54:28] root INFO:     save_inference_dir : ./inference
+[2021/09/27 11:54:28] root INFO:     save_interval : 1
+[2021/09/27 11:54:28] root INFO:     use_visualdl : False
+[2021/09/27 11:54:28] root INFO: Infer : 
+[2021/09/27 11:54:28] root INFO:     PostProcess : 
+[2021/09/27 11:54:28] root INFO:         class_id_map_file : ./PaddleClas/dataset/labels.txt
+[2021/09/27 11:54:28] root INFO:         name : Topk
+[2021/09/27 11:54:28] root INFO:         topk : 1
+[2021/09/27 11:54:28] root INFO:     batch_size : 10
+[2021/09/27 11:54:28] root INFO:     infer_imgs : ./PaddleClas/demo/a.jpg
+[2021/09/27 11:54:28] root INFO:     transforms : 
+[2021/09/27 11:54:28] root INFO:         DecodeImage : 
+[2021/09/27 11:54:28] root INFO:             channel_first : False
+[2021/09/27 11:54:28] root INFO:             to_rgb : True
+[2021/09/27 11:54:28] root INFO:         ResizeImage : 
+[2021/09/27 11:54:28] root INFO:             resize_short : 256
+[2021/09/27 11:54:28] root INFO:         CropImage : 
+[2021/09/27 11:54:28] root INFO:             size : 224
+[2021/09/27 11:54:28] root INFO:         NormalizeImage : 
+[2021/09/27 11:54:28] root INFO:             mean : [0.485, 0.456, 0.406]
+[2021/09/27 11:54:28] root INFO:             order : 
+[2021/09/27 11:54:28] root INFO:             scale : 1.0/255.0
+[2021/09/27 11:54:28] root INFO:             std : [0.229, 0.224, 0.225]
+[2021/09/27 11:54:28] root INFO:         ToCHWImage : None
+[2021/09/27 11:54:28] root INFO: Loss : 
+[2021/09/27 11:54:28] root INFO:     Eval : 
+[2021/09/27 11:54:28] root INFO:         CELoss : 
+[2021/09/27 11:54:28] root INFO:             weight : 1.0
+[2021/09/27 11:54:28] root INFO:     Train : 
+[2021/09/27 11:54:28] root INFO:         CELoss : 
+[2021/09/27 11:54:28] root INFO:             weight : 1.0
+[2021/09/27 11:54:28] root INFO: Metric : 
+[2021/09/27 11:54:28] root INFO:     Eval : 
+[2021/09/27 11:54:28] root INFO:         TopkAcc : 
+[2021/09/27 11:54:28] root INFO:             topk : [1, 5]
+[2021/09/27 11:54:28] root INFO:     Train : 
+[2021/09/27 11:54:28] root INFO:         TopkAcc : 
+[2021/09/27 11:54:28] root INFO:             topk : [1, 5]
+[2021/09/27 11:54:28] root INFO: Optimizer : 
+[2021/09/27 11:54:28] root INFO:     lr : 
+[2021/09/27 11:54:28] root INFO:         learning_rate : 0.0125
+[2021/09/27 11:54:28] root INFO:         name : Cosine
+[2021/09/27 11:54:28] root INFO:         warmup_epoch : 5
+[2021/09/27 11:54:28] root INFO:     momentum : 0.9
+[2021/09/27 11:54:28] root INFO:     name : Momentum
+[2021/09/27 11:54:28] root INFO:     regularizer : 
+[2021/09/27 11:54:28] root INFO:         coeff : 1e-05
+[2021/09/27 11:54:28] root INFO:         name : L2
+[2021/09/27 11:54:30] root INFO: train with paddle 2.1.3 and device CPUPlace
+[2021/09/27 11:54:56] root INFO: 
+===========================================================
+==        PaddleClas is powered by PaddlePaddle !        ==
+===========================================================
+==                                                       ==
+==   For more info please go to the following website.   ==
+==                                                       ==
+==       https://github.com/PaddlePaddle/PaddleClas      ==
+===========================================================
+
+[2021/09/27 11:54:56] root INFO: Arch : 
+[2021/09/27 11:54:56] root INFO:     name : ResNet50_vd
+[2021/09/27 11:54:56] root INFO: DataLoader : 
+[2021/09/27 11:54:56] root INFO:     Eval : 
+[2021/09/27 11:54:56] root INFO:         dataset : 
+[2021/09/27 11:54:56] root INFO:             cls_label_path : ./dataset/val_list.txt
+[2021/09/27 11:54:56] root INFO:             image_root : ./dataset/
+[2021/09/27 11:54:56] root INFO:             name : ImageNetDataset
+[2021/09/27 11:54:56] root INFO:             transform_ops : 
+[2021/09/27 11:54:56] root INFO:                 DecodeImage : 
+[2021/09/27 11:54:56] root INFO:                     channel_first : False
+[2021/09/27 11:54:56] root INFO:                     to_rgb : True
+[2021/09/27 11:54:56] root INFO:                 ResizeImage : 
+[2021/09/27 11:54:56] root INFO:                     resize_short : 256
+[2021/09/27 11:54:56] root INFO:                 CropImage : 
+[2021/09/27 11:54:56] root INFO:                     size : 224
+[2021/09/27 11:54:56] root INFO:                 NormalizeImage : 
+[2021/09/27 11:54:56] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 11:54:56] root INFO:                     order : 
+[2021/09/27 11:54:56] root INFO:                     scale : 1.0/255.0
+[2021/09/27 11:54:56] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 11:54:56] root INFO:         loader : 
+[2021/09/27 11:54:56] root INFO:             num_workers : 0
+[2021/09/27 11:54:56] root INFO:             use_shared_memory : True
+[2021/09/27 11:54:56] root INFO:         sampler : 
+[2021/09/27 11:54:56] root INFO:             batch_size : 64
+[2021/09/27 11:54:56] root INFO:             drop_last : False
+[2021/09/27 11:54:56] root INFO:             name : DistributedBatchSampler
+[2021/09/27 11:54:56] root INFO:             shuffle : False
+[2021/09/27 11:54:56] root INFO:     Train : 
+[2021/09/27 11:54:56] root INFO:         dataset : 
+[2021/09/27 11:54:56] root INFO:             cls_label_path : ./dataset/train_list.txt
+[2021/09/27 11:54:56] root INFO:             image_root : ./dataset/
+[2021/09/27 11:54:56] root INFO:             name : ImageNetDataset
+[2021/09/27 11:54:56] root INFO:             transform_ops : 
+[2021/09/27 11:54:56] root INFO:                 DecodeImage : 
+[2021/09/27 11:54:56] root INFO:                     channel_first : False
+[2021/09/27 11:54:56] root INFO:                     to_rgb : True
+[2021/09/27 11:54:56] root INFO:                 RandCropImage : 
+[2021/09/27 11:54:56] root INFO:                     size : 224
+[2021/09/27 11:54:56] root INFO:                 RandFlipImage : 
+[2021/09/27 11:54:56] root INFO:                     flip_code : 1
+[2021/09/27 11:54:56] root INFO:                 NormalizeImage : 
+[2021/09/27 11:54:56] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 11:54:56] root INFO:                     order : 
+[2021/09/27 11:54:56] root INFO:                     scale : 1.0/255.0
+[2021/09/27 11:54:56] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 11:54:56] root INFO:         loader : 
+[2021/09/27 11:54:56] root INFO:             num_workers : 0
+[2021/09/27 11:54:56] root INFO:             use_shared_memory : True
+[2021/09/27 11:54:56] root INFO:         sampler : 
+[2021/09/27 11:54:56] root INFO:             batch_size : 32
+[2021/09/27 11:54:56] root INFO:             drop_last : False
+[2021/09/27 11:54:56] root INFO:             name : DistributedBatchSampler
+[2021/09/27 11:54:56] root INFO:             shuffle : True
+[2021/09/27 11:54:56] root INFO: Global : 
+[2021/09/27 11:54:56] root INFO:     checkpoints : None
+[2021/09/27 11:54:56] root INFO:     class_num : 5
+[2021/09/27 11:54:56] root INFO:     device : cpu
+[2021/09/27 11:54:56] root INFO:     epochs : 100
+[2021/09/27 11:54:56] root INFO:     eval_during_train : True
+[2021/09/27 11:54:56] root INFO:     eval_interval : 10
+[2021/09/27 11:54:56] root INFO:     image_shape : [3, 224, 224]
+[2021/09/27 11:54:56] root INFO:     output_dir : ./output/
+[2021/09/27 11:54:56] root INFO:     pretrained_model : ./PaddleClas/output/ResNet50_vd/latest/latest
+[2021/09/27 11:54:56] root INFO:     print_batch_step : 10
+[2021/09/27 11:54:56] root INFO:     save_inference_dir : ./inference
+[2021/09/27 11:54:56] root INFO:     save_interval : 1
+[2021/09/27 11:54:56] root INFO:     use_visualdl : False
+[2021/09/27 11:54:56] root INFO: Infer : 
+[2021/09/27 11:54:56] root INFO:     PostProcess : 
+[2021/09/27 11:54:56] root INFO:         class_id_map_file : ./PaddleClas/dataset/labels.txt
+[2021/09/27 11:54:56] root INFO:         name : Topk
+[2021/09/27 11:54:56] root INFO:         topk : 1
+[2021/09/27 11:54:56] root INFO:     batch_size : 10
+[2021/09/27 11:54:56] root INFO:     infer_imgs : ./PaddleClas/demo/a.jpg
+[2021/09/27 11:54:56] root INFO:     transforms : 
+[2021/09/27 11:54:56] root INFO:         DecodeImage : 
+[2021/09/27 11:54:56] root INFO:             channel_first : False
+[2021/09/27 11:54:56] root INFO:             to_rgb : True
+[2021/09/27 11:54:56] root INFO:         ResizeImage : 
+[2021/09/27 11:54:56] root INFO:             resize_short : 256
+[2021/09/27 11:54:56] root INFO:         CropImage : 
+[2021/09/27 11:54:56] root INFO:             size : 224
+[2021/09/27 11:54:56] root INFO:         NormalizeImage : 
+[2021/09/27 11:54:56] root INFO:             mean : [0.485, 0.456, 0.406]
+[2021/09/27 11:54:56] root INFO:             order : 
+[2021/09/27 11:54:56] root INFO:             scale : 1.0/255.0
+[2021/09/27 11:54:56] root INFO:             std : [0.229, 0.224, 0.225]
+[2021/09/27 11:54:56] root INFO:         ToCHWImage : None
+[2021/09/27 11:54:56] root INFO: Loss : 
+[2021/09/27 11:54:56] root INFO:     Eval : 
+[2021/09/27 11:54:56] root INFO:         CELoss : 
+[2021/09/27 11:54:56] root INFO:             weight : 1.0
+[2021/09/27 11:54:56] root INFO:     Train : 
+[2021/09/27 11:54:56] root INFO:         CELoss : 
+[2021/09/27 11:54:56] root INFO:             weight : 1.0
+[2021/09/27 11:54:56] root INFO: Metric : 
+[2021/09/27 11:54:56] root INFO:     Eval : 
+[2021/09/27 11:54:56] root INFO:         TopkAcc : 
+[2021/09/27 11:54:56] root INFO:             topk : [1, 5]
+[2021/09/27 11:54:56] root INFO:     Train : 
+[2021/09/27 11:54:56] root INFO:         TopkAcc : 
+[2021/09/27 11:54:56] root INFO:             topk : [1, 5]
+[2021/09/27 11:54:56] root INFO: Optimizer : 
+[2021/09/27 11:54:56] root INFO:     lr : 
+[2021/09/27 11:54:56] root INFO:         learning_rate : 0.0125
+[2021/09/27 11:54:56] root INFO:         name : Cosine
+[2021/09/27 11:54:56] root INFO:         warmup_epoch : 5
+[2021/09/27 11:54:56] root INFO:     momentum : 0.9
+[2021/09/27 11:54:56] root INFO:     name : Momentum
+[2021/09/27 11:54:56] root INFO:     regularizer : 
+[2021/09/27 11:54:56] root INFO:         coeff : 1e-05
+[2021/09/27 11:54:56] root INFO:         name : L2
+[2021/09/27 11:54:58] root INFO: train with paddle 2.1.3 and device CPUPlace
+[2021/09/27 11:55:33] root INFO: 
+===========================================================
+==        PaddleClas is powered by PaddlePaddle !        ==
+===========================================================
+==                                                       ==
+==   For more info please go to the following website.   ==
+==                                                       ==
+==       https://github.com/PaddlePaddle/PaddleClas      ==
+===========================================================
+
+[2021/09/27 11:55:33] root INFO: Arch : 
+[2021/09/27 11:55:33] root INFO:     name : ResNet50_vd
+[2021/09/27 11:55:33] root INFO: DataLoader : 
+[2021/09/27 11:55:33] root INFO:     Eval : 
+[2021/09/27 11:55:33] root INFO:         dataset : 
+[2021/09/27 11:55:33] root INFO:             cls_label_path : ./dataset/val_list.txt
+[2021/09/27 11:55:33] root INFO:             image_root : ./dataset/
+[2021/09/27 11:55:33] root INFO:             name : ImageNetDataset
+[2021/09/27 11:55:33] root INFO:             transform_ops : 
+[2021/09/27 11:55:33] root INFO:                 DecodeImage : 
+[2021/09/27 11:55:33] root INFO:                     channel_first : False
+[2021/09/27 11:55:33] root INFO:                     to_rgb : True
+[2021/09/27 11:55:33] root INFO:                 ResizeImage : 
+[2021/09/27 11:55:33] root INFO:                     resize_short : 256
+[2021/09/27 11:55:33] root INFO:                 CropImage : 
+[2021/09/27 11:55:33] root INFO:                     size : 224
+[2021/09/27 11:55:33] root INFO:                 NormalizeImage : 
+[2021/09/27 11:55:33] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 11:55:33] root INFO:                     order : 
+[2021/09/27 11:55:33] root INFO:                     scale : 1.0/255.0
+[2021/09/27 11:55:33] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 11:55:33] root INFO:         loader : 
+[2021/09/27 11:55:33] root INFO:             num_workers : 0
+[2021/09/27 11:55:33] root INFO:             use_shared_memory : True
+[2021/09/27 11:55:33] root INFO:         sampler : 
+[2021/09/27 11:55:33] root INFO:             batch_size : 64
+[2021/09/27 11:55:33] root INFO:             drop_last : False
+[2021/09/27 11:55:33] root INFO:             name : DistributedBatchSampler
+[2021/09/27 11:55:33] root INFO:             shuffle : False
+[2021/09/27 11:55:33] root INFO:     Train : 
+[2021/09/27 11:55:33] root INFO:         dataset : 
+[2021/09/27 11:55:33] root INFO:             cls_label_path : ./dataset/train_list.txt
+[2021/09/27 11:55:33] root INFO:             image_root : ./dataset/
+[2021/09/27 11:55:33] root INFO:             name : ImageNetDataset
+[2021/09/27 11:55:33] root INFO:             transform_ops : 
+[2021/09/27 11:55:33] root INFO:                 DecodeImage : 
+[2021/09/27 11:55:33] root INFO:                     channel_first : False
+[2021/09/27 11:55:33] root INFO:                     to_rgb : True
+[2021/09/27 11:55:33] root INFO:                 RandCropImage : 
+[2021/09/27 11:55:33] root INFO:                     size : 224
+[2021/09/27 11:55:33] root INFO:                 RandFlipImage : 
+[2021/09/27 11:55:33] root INFO:                     flip_code : 1
+[2021/09/27 11:55:33] root INFO:                 NormalizeImage : 
+[2021/09/27 11:55:33] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 11:55:33] root INFO:                     order : 
+[2021/09/27 11:55:33] root INFO:                     scale : 1.0/255.0
+[2021/09/27 11:55:33] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 11:55:33] root INFO:         loader : 
+[2021/09/27 11:55:33] root INFO:             num_workers : 0
+[2021/09/27 11:55:33] root INFO:             use_shared_memory : True
+[2021/09/27 11:55:33] root INFO:         sampler : 
+[2021/09/27 11:55:33] root INFO:             batch_size : 32
+[2021/09/27 11:55:33] root INFO:             drop_last : False
+[2021/09/27 11:55:33] root INFO:             name : DistributedBatchSampler
+[2021/09/27 11:55:33] root INFO:             shuffle : True
+[2021/09/27 11:55:33] root INFO: Global : 
+[2021/09/27 11:55:33] root INFO:     checkpoints : None
+[2021/09/27 11:55:33] root INFO:     class_num : 5
+[2021/09/27 11:55:33] root INFO:     device : cpu
+[2021/09/27 11:55:33] root INFO:     epochs : 100
+[2021/09/27 11:55:33] root INFO:     eval_during_train : True
+[2021/09/27 11:55:33] root INFO:     eval_interval : 10
+[2021/09/27 11:55:33] root INFO:     image_shape : [3, 224, 224]
+[2021/09/27 11:55:33] root INFO:     output_dir : ./output/
+[2021/09/27 11:55:33] root INFO:     pretrained_model : ./PaddleClas/output/ResNet50_vd/latest/latest
+[2021/09/27 11:55:33] root INFO:     print_batch_step : 10
+[2021/09/27 11:55:33] root INFO:     save_inference_dir : ./inference
+[2021/09/27 11:55:33] root INFO:     save_interval : 1
+[2021/09/27 11:55:33] root INFO:     use_visualdl : False
+[2021/09/27 11:55:33] root INFO: Infer : 
+[2021/09/27 11:55:33] root INFO:     PostProcess : 
+[2021/09/27 11:55:33] root INFO:         class_id_map_file : ./PaddleClas/dataset/labels.txt
+[2021/09/27 11:55:33] root INFO:         name : Topk
+[2021/09/27 11:55:33] root INFO:         topk : 1
+[2021/09/27 11:55:33] root INFO:     batch_size : 10
+[2021/09/27 11:55:33] root INFO:     infer_imgs : ./PaddleClas/demo/a.jpg
+[2021/09/27 11:55:33] root INFO:     transforms : 
+[2021/09/27 11:55:33] root INFO:         DecodeImage : 
+[2021/09/27 11:55:33] root INFO:             channel_first : False
+[2021/09/27 11:55:33] root INFO:             to_rgb : True
+[2021/09/27 11:55:33] root INFO:         ResizeImage : 
+[2021/09/27 11:55:33] root INFO:             resize_short : 256
+[2021/09/27 11:55:33] root INFO:         CropImage : 
+[2021/09/27 11:55:33] root INFO:             size : 224
+[2021/09/27 11:55:33] root INFO:         NormalizeImage : 
+[2021/09/27 11:55:33] root INFO:             mean : [0.485, 0.456, 0.406]
+[2021/09/27 11:55:33] root INFO:             order : 
+[2021/09/27 11:55:33] root INFO:             scale : 1.0/255.0
+[2021/09/27 11:55:33] root INFO:             std : [0.229, 0.224, 0.225]
+[2021/09/27 11:55:33] root INFO:         ToCHWImage : None
+[2021/09/27 11:55:33] root INFO: Loss : 
+[2021/09/27 11:55:33] root INFO:     Eval : 
+[2021/09/27 11:55:33] root INFO:         CELoss : 
+[2021/09/27 11:55:33] root INFO:             weight : 1.0
+[2021/09/27 11:55:33] root INFO:     Train : 
+[2021/09/27 11:55:33] root INFO:         CELoss : 
+[2021/09/27 11:55:33] root INFO:             weight : 1.0
+[2021/09/27 11:55:33] root INFO: Metric : 
+[2021/09/27 11:55:33] root INFO:     Eval : 
+[2021/09/27 11:55:33] root INFO:         TopkAcc : 
+[2021/09/27 11:55:33] root INFO:             topk : [1, 5]
+[2021/09/27 11:55:33] root INFO:     Train : 
+[2021/09/27 11:55:33] root INFO:         TopkAcc : 
+[2021/09/27 11:55:33] root INFO:             topk : [1, 5]
+[2021/09/27 11:55:33] root INFO: Optimizer : 
+[2021/09/27 11:55:33] root INFO:     lr : 
+[2021/09/27 11:55:33] root INFO:         learning_rate : 0.0125
+[2021/09/27 11:55:33] root INFO:         name : Cosine
+[2021/09/27 11:55:33] root INFO:         warmup_epoch : 5
+[2021/09/27 11:55:33] root INFO:     momentum : 0.9
+[2021/09/27 11:55:33] root INFO:     name : Momentum
+[2021/09/27 11:55:33] root INFO:     regularizer : 
+[2021/09/27 11:55:33] root INFO:         coeff : 1e-05
+[2021/09/27 11:55:33] root INFO:         name : L2
+[2021/09/27 11:55:35] root INFO: train with paddle 2.1.3 and device CPUPlace
+[2021/09/27 11:56:21] root INFO: 
+===========================================================
+==        PaddleClas is powered by PaddlePaddle !        ==
+===========================================================
+==                                                       ==
+==   For more info please go to the following website.   ==
+==                                                       ==
+==       https://github.com/PaddlePaddle/PaddleClas      ==
+===========================================================
+
+[2021/09/27 11:56:21] root INFO: Arch : 
+[2021/09/27 11:56:21] root INFO:     name : ResNet50_vd
+[2021/09/27 11:56:21] root INFO: DataLoader : 
+[2021/09/27 11:56:21] root INFO:     Eval : 
+[2021/09/27 11:56:21] root INFO:         dataset : 
+[2021/09/27 11:56:21] root INFO:             cls_label_path : ./dataset/val_list.txt
+[2021/09/27 11:56:21] root INFO:             image_root : ./dataset/
+[2021/09/27 11:56:21] root INFO:             name : ImageNetDataset
+[2021/09/27 11:56:21] root INFO:             transform_ops : 
+[2021/09/27 11:56:21] root INFO:                 DecodeImage : 
+[2021/09/27 11:56:21] root INFO:                     channel_first : False
+[2021/09/27 11:56:21] root INFO:                     to_rgb : True
+[2021/09/27 11:56:21] root INFO:                 ResizeImage : 
+[2021/09/27 11:56:21] root INFO:                     resize_short : 256
+[2021/09/27 11:56:21] root INFO:                 CropImage : 
+[2021/09/27 11:56:21] root INFO:                     size : 224
+[2021/09/27 11:56:21] root INFO:                 NormalizeImage : 
+[2021/09/27 11:56:21] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 11:56:21] root INFO:                     order : 
+[2021/09/27 11:56:21] root INFO:                     scale : 1.0/255.0
+[2021/09/27 11:56:21] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 11:56:21] root INFO:         loader : 
+[2021/09/27 11:56:21] root INFO:             num_workers : 0
+[2021/09/27 11:56:21] root INFO:             use_shared_memory : True
+[2021/09/27 11:56:21] root INFO:         sampler : 
+[2021/09/27 11:56:21] root INFO:             batch_size : 64
+[2021/09/27 11:56:21] root INFO:             drop_last : False
+[2021/09/27 11:56:21] root INFO:             name : DistributedBatchSampler
+[2021/09/27 11:56:21] root INFO:             shuffle : False
+[2021/09/27 11:56:21] root INFO:     Train : 
+[2021/09/27 11:56:21] root INFO:         dataset : 
+[2021/09/27 11:56:21] root INFO:             cls_label_path : ./dataset/train_list.txt
+[2021/09/27 11:56:21] root INFO:             image_root : ./dataset/
+[2021/09/27 11:56:21] root INFO:             name : ImageNetDataset
+[2021/09/27 11:56:21] root INFO:             transform_ops : 
+[2021/09/27 11:56:21] root INFO:                 DecodeImage : 
+[2021/09/27 11:56:21] root INFO:                     channel_first : False
+[2021/09/27 11:56:21] root INFO:                     to_rgb : True
+[2021/09/27 11:56:21] root INFO:                 RandCropImage : 
+[2021/09/27 11:56:21] root INFO:                     size : 224
+[2021/09/27 11:56:21] root INFO:                 RandFlipImage : 
+[2021/09/27 11:56:21] root INFO:                     flip_code : 1
+[2021/09/27 11:56:21] root INFO:                 NormalizeImage : 
+[2021/09/27 11:56:21] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 11:56:21] root INFO:                     order : 
+[2021/09/27 11:56:21] root INFO:                     scale : 1.0/255.0
+[2021/09/27 11:56:21] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 11:56:21] root INFO:         loader : 
+[2021/09/27 11:56:21] root INFO:             num_workers : 0
+[2021/09/27 11:56:21] root INFO:             use_shared_memory : True
+[2021/09/27 11:56:21] root INFO:         sampler : 
+[2021/09/27 11:56:21] root INFO:             batch_size : 32
+[2021/09/27 11:56:21] root INFO:             drop_last : False
+[2021/09/27 11:56:21] root INFO:             name : DistributedBatchSampler
+[2021/09/27 11:56:21] root INFO:             shuffle : True
+[2021/09/27 11:56:21] root INFO: Global : 
+[2021/09/27 11:56:21] root INFO:     checkpoints : None
+[2021/09/27 11:56:21] root INFO:     class_num : 5
+[2021/09/27 11:56:21] root INFO:     device : cpu
+[2021/09/27 11:56:21] root INFO:     epochs : 100
+[2021/09/27 11:56:21] root INFO:     eval_during_train : True
+[2021/09/27 11:56:21] root INFO:     eval_interval : 10
+[2021/09/27 11:56:21] root INFO:     image_shape : [3, 224, 224]
+[2021/09/27 11:56:21] root INFO:     output_dir : ./output/
+[2021/09/27 11:56:21] root INFO:     pretrained_model : ./PaddleClas/output/ResNet50_vd/latest/latest
+[2021/09/27 11:56:21] root INFO:     print_batch_step : 10
+[2021/09/27 11:56:21] root INFO:     save_inference_dir : ./inference
+[2021/09/27 11:56:21] root INFO:     save_interval : 1
+[2021/09/27 11:56:21] root INFO:     use_visualdl : False
+[2021/09/27 11:56:21] root INFO: Infer : 
+[2021/09/27 11:56:21] root INFO:     PostProcess : 
+[2021/09/27 11:56:21] root INFO:         class_id_map_file : ./PaddleClas/dataset/labels.txt
+[2021/09/27 11:56:21] root INFO:         name : Topk
+[2021/09/27 11:56:21] root INFO:         topk : 1
+[2021/09/27 11:56:21] root INFO:     batch_size : 10
+[2021/09/27 11:56:21] root INFO:     infer_imgs : ./PaddleClas/demo/a.jpg
+[2021/09/27 11:56:21] root INFO:     transforms : 
+[2021/09/27 11:56:21] root INFO:         DecodeImage : 
+[2021/09/27 11:56:21] root INFO:             channel_first : False
+[2021/09/27 11:56:21] root INFO:             to_rgb : True
+[2021/09/27 11:56:21] root INFO:         ResizeImage : 
+[2021/09/27 11:56:21] root INFO:             resize_short : 256
+[2021/09/27 11:56:21] root INFO:         CropImage : 
+[2021/09/27 11:56:21] root INFO:             size : 224
+[2021/09/27 11:56:21] root INFO:         NormalizeImage : 
+[2021/09/27 11:56:21] root INFO:             mean : [0.485, 0.456, 0.406]
+[2021/09/27 11:56:21] root INFO:             order : 
+[2021/09/27 11:56:21] root INFO:             scale : 1.0/255.0
+[2021/09/27 11:56:21] root INFO:             std : [0.229, 0.224, 0.225]
+[2021/09/27 11:56:21] root INFO:         ToCHWImage : None
+[2021/09/27 11:56:21] root INFO: Loss : 
+[2021/09/27 11:56:21] root INFO:     Eval : 
+[2021/09/27 11:56:21] root INFO:         CELoss : 
+[2021/09/27 11:56:21] root INFO:             weight : 1.0
+[2021/09/27 11:56:21] root INFO:     Train : 
+[2021/09/27 11:56:21] root INFO:         CELoss : 
+[2021/09/27 11:56:21] root INFO:             weight : 1.0
+[2021/09/27 11:56:21] root INFO: Metric : 
+[2021/09/27 11:56:21] root INFO:     Eval : 
+[2021/09/27 11:56:21] root INFO:         TopkAcc : 
+[2021/09/27 11:56:21] root INFO:             topk : [1, 5]
+[2021/09/27 11:56:21] root INFO:     Train : 
+[2021/09/27 11:56:21] root INFO:         TopkAcc : 
+[2021/09/27 11:56:21] root INFO:             topk : [1, 5]
+[2021/09/27 11:56:21] root INFO: Optimizer : 
+[2021/09/27 11:56:21] root INFO:     lr : 
+[2021/09/27 11:56:21] root INFO:         learning_rate : 0.0125
+[2021/09/27 11:56:21] root INFO:         name : Cosine
+[2021/09/27 11:56:21] root INFO:         warmup_epoch : 5
+[2021/09/27 11:56:21] root INFO:     momentum : 0.9
+[2021/09/27 11:56:21] root INFO:     name : Momentum
+[2021/09/27 11:56:21] root INFO:     regularizer : 
+[2021/09/27 11:56:21] root INFO:         coeff : 1e-05
+[2021/09/27 11:56:21] root INFO:         name : L2
+[2021/09/27 11:56:23] root INFO: train with paddle 2.1.3 and device CPUPlace
+[2021/09/27 12:20:16] root INFO: 
+===========================================================
+==        PaddleClas is powered by PaddlePaddle !        ==
+===========================================================
+==                                                       ==
+==   For more info please go to the following website.   ==
+==                                                       ==
+==       https://github.com/PaddlePaddle/PaddleClas      ==
+===========================================================
+
+[2021/09/27 12:20:16] root INFO: Arch : 
+[2021/09/27 12:20:16] root INFO:     name : ResNet50_vd
+[2021/09/27 12:20:16] root INFO: DataLoader : 
+[2021/09/27 12:20:16] root INFO:     Eval : 
+[2021/09/27 12:20:16] root INFO:         dataset : 
+[2021/09/27 12:20:16] root INFO:             cls_label_path : ./dataset/val_list.txt
+[2021/09/27 12:20:16] root INFO:             image_root : ./dataset/
+[2021/09/27 12:20:16] root INFO:             name : ImageNetDataset
+[2021/09/27 12:20:16] root INFO:             transform_ops : 
+[2021/09/27 12:20:16] root INFO:                 DecodeImage : 
+[2021/09/27 12:20:16] root INFO:                     channel_first : False
+[2021/09/27 12:20:16] root INFO:                     to_rgb : True
+[2021/09/27 12:20:16] root INFO:                 ResizeImage : 
+[2021/09/27 12:20:16] root INFO:                     resize_short : 256
+[2021/09/27 12:20:16] root INFO:                 CropImage : 
+[2021/09/27 12:20:16] root INFO:                     size : 224
+[2021/09/27 12:20:16] root INFO:                 NormalizeImage : 
+[2021/09/27 12:20:16] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 12:20:16] root INFO:                     order : 
+[2021/09/27 12:20:16] root INFO:                     scale : 1.0/255.0
+[2021/09/27 12:20:16] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 12:20:16] root INFO:         loader : 
+[2021/09/27 12:20:16] root INFO:             num_workers : 0
+[2021/09/27 12:20:16] root INFO:             use_shared_memory : True
+[2021/09/27 12:20:16] root INFO:         sampler : 
+[2021/09/27 12:20:16] root INFO:             batch_size : 64
+[2021/09/27 12:20:16] root INFO:             drop_last : False
+[2021/09/27 12:20:16] root INFO:             name : DistributedBatchSampler
+[2021/09/27 12:20:16] root INFO:             shuffle : False
+[2021/09/27 12:20:16] root INFO:     Train : 
+[2021/09/27 12:20:16] root INFO:         dataset : 
+[2021/09/27 12:20:16] root INFO:             cls_label_path : ./dataset/train_list.txt
+[2021/09/27 12:20:16] root INFO:             image_root : ./dataset/
+[2021/09/27 12:20:16] root INFO:             name : ImageNetDataset
+[2021/09/27 12:20:16] root INFO:             transform_ops : 
+[2021/09/27 12:20:16] root INFO:                 DecodeImage : 
+[2021/09/27 12:20:16] root INFO:                     channel_first : False
+[2021/09/27 12:20:16] root INFO:                     to_rgb : True
+[2021/09/27 12:20:16] root INFO:                 RandCropImage : 
+[2021/09/27 12:20:16] root INFO:                     size : 224
+[2021/09/27 12:20:16] root INFO:                 RandFlipImage : 
+[2021/09/27 12:20:16] root INFO:                     flip_code : 1
+[2021/09/27 12:20:16] root INFO:                 NormalizeImage : 
+[2021/09/27 12:20:16] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 12:20:16] root INFO:                     order : 
+[2021/09/27 12:20:16] root INFO:                     scale : 1.0/255.0
+[2021/09/27 12:20:16] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 12:20:16] root INFO:         loader : 
+[2021/09/27 12:20:16] root INFO:             num_workers : 0
+[2021/09/27 12:20:16] root INFO:             use_shared_memory : True
+[2021/09/27 12:20:16] root INFO:         sampler : 
+[2021/09/27 12:20:16] root INFO:             batch_size : 32
+[2021/09/27 12:20:16] root INFO:             drop_last : False
+[2021/09/27 12:20:16] root INFO:             name : DistributedBatchSampler
+[2021/09/27 12:20:16] root INFO:             shuffle : True
+[2021/09/27 12:20:16] root INFO: Global : 
+[2021/09/27 12:20:16] root INFO:     checkpoints : None
+[2021/09/27 12:20:16] root INFO:     class_num : 5
+[2021/09/27 12:20:16] root INFO:     device : cpu
+[2021/09/27 12:20:16] root INFO:     epochs : 100
+[2021/09/27 12:20:16] root INFO:     eval_during_train : True
+[2021/09/27 12:20:16] root INFO:     eval_interval : 10
+[2021/09/27 12:20:16] root INFO:     image_shape : [3, 224, 224]
+[2021/09/27 12:20:16] root INFO:     output_dir : ./output/
+[2021/09/27 12:20:16] root INFO:     pretrained_model : ./PaddleClas/output/ResNet50_vd/latest/latest
+[2021/09/27 12:20:16] root INFO:     print_batch_step : 10
+[2021/09/27 12:20:16] root INFO:     save_inference_dir : ./inference
+[2021/09/27 12:20:16] root INFO:     save_interval : 1
+[2021/09/27 12:20:16] root INFO:     use_visualdl : False
+[2021/09/27 12:20:16] root INFO: Infer : 
+[2021/09/27 12:20:16] root INFO:     PostProcess : 
+[2021/09/27 12:20:16] root INFO:         class_id_map_file : ./PaddleClas/dataset/labels.txt
+[2021/09/27 12:20:16] root INFO:         name : Topk
+[2021/09/27 12:20:16] root INFO:         topk : 1
+[2021/09/27 12:20:16] root INFO:     batch_size : 10
+[2021/09/27 12:20:16] root INFO:     infer_imgs : ./src/s.jpg
+[2021/09/27 12:20:16] root INFO:     transforms : 
+[2021/09/27 12:20:16] root INFO:         DecodeImage : 
+[2021/09/27 12:20:16] root INFO:             channel_first : False
+[2021/09/27 12:20:16] root INFO:             to_rgb : True
+[2021/09/27 12:20:16] root INFO:         ResizeImage : 
+[2021/09/27 12:20:16] root INFO:             resize_short : 256
+[2021/09/27 12:20:16] root INFO:         CropImage : 
+[2021/09/27 12:20:16] root INFO:             size : 224
+[2021/09/27 12:20:16] root INFO:         NormalizeImage : 
+[2021/09/27 12:20:16] root INFO:             mean : [0.485, 0.456, 0.406]
+[2021/09/27 12:20:16] root INFO:             order : 
+[2021/09/27 12:20:16] root INFO:             scale : 1.0/255.0
+[2021/09/27 12:20:16] root INFO:             std : [0.229, 0.224, 0.225]
+[2021/09/27 12:20:16] root INFO:         ToCHWImage : None
+[2021/09/27 12:20:16] root INFO: Loss : 
+[2021/09/27 12:20:16] root INFO:     Eval : 
+[2021/09/27 12:20:16] root INFO:         CELoss : 
+[2021/09/27 12:20:16] root INFO:             weight : 1.0
+[2021/09/27 12:20:16] root INFO:     Train : 
+[2021/09/27 12:20:16] root INFO:         CELoss : 
+[2021/09/27 12:20:16] root INFO:             weight : 1.0
+[2021/09/27 12:20:16] root INFO: Metric : 
+[2021/09/27 12:20:16] root INFO:     Eval : 
+[2021/09/27 12:20:16] root INFO:         TopkAcc : 
+[2021/09/27 12:20:16] root INFO:             topk : [1, 5]
+[2021/09/27 12:20:16] root INFO:     Train : 
+[2021/09/27 12:20:16] root INFO:         TopkAcc : 
+[2021/09/27 12:20:16] root INFO:             topk : [1, 5]
+[2021/09/27 12:20:16] root INFO: Optimizer : 
+[2021/09/27 12:20:16] root INFO:     lr : 
+[2021/09/27 12:20:16] root INFO:         learning_rate : 0.0125
+[2021/09/27 12:20:16] root INFO:         name : Cosine
+[2021/09/27 12:20:16] root INFO:         warmup_epoch : 5
+[2021/09/27 12:20:16] root INFO:     momentum : 0.9
+[2021/09/27 12:20:16] root INFO:     name : Momentum
+[2021/09/27 12:20:16] root INFO:     regularizer : 
+[2021/09/27 12:20:16] root INFO:         coeff : 1e-05
+[2021/09/27 12:20:16] root INFO:         name : L2
+[2021/09/27 12:20:18] root INFO: train with paddle 2.1.3 and device CPUPlace
+[2021/09/27 12:22:25] root INFO: 
+===========================================================
+==        PaddleClas is powered by PaddlePaddle !        ==
+===========================================================
+==                                                       ==
+==   For more info please go to the following website.   ==
+==                                                       ==
+==       https://github.com/PaddlePaddle/PaddleClas      ==
+===========================================================
+
+[2021/09/27 12:22:25] root INFO: Arch : 
+[2021/09/27 12:22:25] root INFO:     name : ResNet50_vd
+[2021/09/27 12:22:25] root INFO: DataLoader : 
+[2021/09/27 12:22:25] root INFO:     Eval : 
+[2021/09/27 12:22:25] root INFO:         dataset : 
+[2021/09/27 12:22:25] root INFO:             cls_label_path : ./dataset/val_list.txt
+[2021/09/27 12:22:25] root INFO:             image_root : ./dataset/
+[2021/09/27 12:22:25] root INFO:             name : ImageNetDataset
+[2021/09/27 12:22:25] root INFO:             transform_ops : 
+[2021/09/27 12:22:25] root INFO:                 DecodeImage : 
+[2021/09/27 12:22:25] root INFO:                     channel_first : False
+[2021/09/27 12:22:25] root INFO:                     to_rgb : True
+[2021/09/27 12:22:25] root INFO:                 ResizeImage : 
+[2021/09/27 12:22:25] root INFO:                     resize_short : 256
+[2021/09/27 12:22:25] root INFO:                 CropImage : 
+[2021/09/27 12:22:25] root INFO:                     size : 224
+[2021/09/27 12:22:25] root INFO:                 NormalizeImage : 
+[2021/09/27 12:22:25] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 12:22:25] root INFO:                     order : 
+[2021/09/27 12:22:25] root INFO:                     scale : 1.0/255.0
+[2021/09/27 12:22:25] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 12:22:25] root INFO:         loader : 
+[2021/09/27 12:22:25] root INFO:             num_workers : 0
+[2021/09/27 12:22:25] root INFO:             use_shared_memory : True
+[2021/09/27 12:22:25] root INFO:         sampler : 
+[2021/09/27 12:22:25] root INFO:             batch_size : 64
+[2021/09/27 12:22:25] root INFO:             drop_last : False
+[2021/09/27 12:22:25] root INFO:             name : DistributedBatchSampler
+[2021/09/27 12:22:25] root INFO:             shuffle : False
+[2021/09/27 12:22:25] root INFO:     Train : 
+[2021/09/27 12:22:25] root INFO:         dataset : 
+[2021/09/27 12:22:25] root INFO:             cls_label_path : ./dataset/train_list.txt
+[2021/09/27 12:22:25] root INFO:             image_root : ./dataset/
+[2021/09/27 12:22:25] root INFO:             name : ImageNetDataset
+[2021/09/27 12:22:25] root INFO:             transform_ops : 
+[2021/09/27 12:22:25] root INFO:                 DecodeImage : 
+[2021/09/27 12:22:25] root INFO:                     channel_first : False
+[2021/09/27 12:22:25] root INFO:                     to_rgb : True
+[2021/09/27 12:22:25] root INFO:                 RandCropImage : 
+[2021/09/27 12:22:25] root INFO:                     size : 224
+[2021/09/27 12:22:25] root INFO:                 RandFlipImage : 
+[2021/09/27 12:22:25] root INFO:                     flip_code : 1
+[2021/09/27 12:22:25] root INFO:                 NormalizeImage : 
+[2021/09/27 12:22:25] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 12:22:25] root INFO:                     order : 
+[2021/09/27 12:22:25] root INFO:                     scale : 1.0/255.0
+[2021/09/27 12:22:25] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 12:22:25] root INFO:         loader : 
+[2021/09/27 12:22:25] root INFO:             num_workers : 0
+[2021/09/27 12:22:25] root INFO:             use_shared_memory : True
+[2021/09/27 12:22:25] root INFO:         sampler : 
+[2021/09/27 12:22:25] root INFO:             batch_size : 32
+[2021/09/27 12:22:25] root INFO:             drop_last : False
+[2021/09/27 12:22:25] root INFO:             name : DistributedBatchSampler
+[2021/09/27 12:22:25] root INFO:             shuffle : True
+[2021/09/27 12:22:25] root INFO: Global : 
+[2021/09/27 12:22:25] root INFO:     checkpoints : None
+[2021/09/27 12:22:25] root INFO:     class_num : 5
+[2021/09/27 12:22:25] root INFO:     device : cpu
+[2021/09/27 12:22:25] root INFO:     epochs : 100
+[2021/09/27 12:22:25] root INFO:     eval_during_train : True
+[2021/09/27 12:22:25] root INFO:     eval_interval : 10
+[2021/09/27 12:22:25] root INFO:     image_shape : [3, 224, 224]
+[2021/09/27 12:22:25] root INFO:     output_dir : ./output/
+[2021/09/27 12:22:25] root INFO:     pretrained_model : ./PaddleClas/output/ResNet50_vd/latest/latest
+[2021/09/27 12:22:25] root INFO:     print_batch_step : 10
+[2021/09/27 12:22:25] root INFO:     save_inference_dir : ./inference
+[2021/09/27 12:22:25] root INFO:     save_interval : 1
+[2021/09/27 12:22:25] root INFO:     use_visualdl : False
+[2021/09/27 12:22:25] root INFO: Infer : 
+[2021/09/27 12:22:25] root INFO:     PostProcess : 
+[2021/09/27 12:22:25] root INFO:         class_id_map_file : ./PaddleClas/dataset/labels.txt
+[2021/09/27 12:22:25] root INFO:         name : Topk
+[2021/09/27 12:22:25] root INFO:         topk : 1
+[2021/09/27 12:22:25] root INFO:     batch_size : 10
+[2021/09/27 12:22:25] root INFO:     infer_imgs : ./src/s.jpg
+[2021/09/27 12:22:25] root INFO:     transforms : 
+[2021/09/27 12:22:25] root INFO:         DecodeImage : 
+[2021/09/27 12:22:25] root INFO:             channel_first : False
+[2021/09/27 12:22:25] root INFO:             to_rgb : True
+[2021/09/27 12:22:25] root INFO:         ResizeImage : 
+[2021/09/27 12:22:25] root INFO:             resize_short : 256
+[2021/09/27 12:22:25] root INFO:         CropImage : 
+[2021/09/27 12:22:25] root INFO:             size : 224
+[2021/09/27 12:22:25] root INFO:         NormalizeImage : 
+[2021/09/27 12:22:25] root INFO:             mean : [0.485, 0.456, 0.406]
+[2021/09/27 12:22:25] root INFO:             order : 
+[2021/09/27 12:22:25] root INFO:             scale : 1.0/255.0
+[2021/09/27 12:22:25] root INFO:             std : [0.229, 0.224, 0.225]
+[2021/09/27 12:22:25] root INFO:         ToCHWImage : None
+[2021/09/27 12:22:25] root INFO: Loss : 
+[2021/09/27 12:22:25] root INFO:     Eval : 
+[2021/09/27 12:22:25] root INFO:         CELoss : 
+[2021/09/27 12:22:25] root INFO:             weight : 1.0
+[2021/09/27 12:22:25] root INFO:     Train : 
+[2021/09/27 12:22:25] root INFO:         CELoss : 
+[2021/09/27 12:22:25] root INFO:             weight : 1.0
+[2021/09/27 12:22:25] root INFO: Metric : 
+[2021/09/27 12:22:25] root INFO:     Eval : 
+[2021/09/27 12:22:25] root INFO:         TopkAcc : 
+[2021/09/27 12:22:25] root INFO:             topk : [1, 5]
+[2021/09/27 12:22:25] root INFO:     Train : 
+[2021/09/27 12:22:25] root INFO:         TopkAcc : 
+[2021/09/27 12:22:25] root INFO:             topk : [1, 5]
+[2021/09/27 12:22:25] root INFO: Optimizer : 
+[2021/09/27 12:22:25] root INFO:     lr : 
+[2021/09/27 12:22:25] root INFO:         learning_rate : 0.0125
+[2021/09/27 12:22:25] root INFO:         name : Cosine
+[2021/09/27 12:22:25] root INFO:         warmup_epoch : 5
+[2021/09/27 12:22:25] root INFO:     momentum : 0.9
+[2021/09/27 12:22:25] root INFO:     name : Momentum
+[2021/09/27 12:22:25] root INFO:     regularizer : 
+[2021/09/27 12:22:25] root INFO:         coeff : 1e-05
+[2021/09/27 12:22:25] root INFO:         name : L2
+[2021/09/27 12:22:27] root INFO: train with paddle 2.1.3 and device CPUPlace
+[2021/09/27 12:24:58] root INFO: 
+===========================================================
+==        PaddleClas is powered by PaddlePaddle !        ==
+===========================================================
+==                                                       ==
+==   For more info please go to the following website.   ==
+==                                                       ==
+==       https://github.com/PaddlePaddle/PaddleClas      ==
+===========================================================
+
+[2021/09/27 12:24:58] root INFO: Arch : 
+[2021/09/27 12:24:58] root INFO:     name : ResNet50_vd
+[2021/09/27 12:24:58] root INFO: DataLoader : 
+[2021/09/27 12:24:58] root INFO:     Eval : 
+[2021/09/27 12:24:58] root INFO:         dataset : 
+[2021/09/27 12:24:58] root INFO:             cls_label_path : ./dataset/val_list.txt
+[2021/09/27 12:24:58] root INFO:             image_root : ./dataset/
+[2021/09/27 12:24:58] root INFO:             name : ImageNetDataset
+[2021/09/27 12:24:58] root INFO:             transform_ops : 
+[2021/09/27 12:24:58] root INFO:                 DecodeImage : 
+[2021/09/27 12:24:58] root INFO:                     channel_first : False
+[2021/09/27 12:24:58] root INFO:                     to_rgb : True
+[2021/09/27 12:24:58] root INFO:                 ResizeImage : 
+[2021/09/27 12:24:58] root INFO:                     resize_short : 256
+[2021/09/27 12:24:58] root INFO:                 CropImage : 
+[2021/09/27 12:24:58] root INFO:                     size : 224
+[2021/09/27 12:24:58] root INFO:                 NormalizeImage : 
+[2021/09/27 12:24:58] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 12:24:58] root INFO:                     order : 
+[2021/09/27 12:24:58] root INFO:                     scale : 1.0/255.0
+[2021/09/27 12:24:58] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 12:24:58] root INFO:         loader : 
+[2021/09/27 12:24:58] root INFO:             num_workers : 0
+[2021/09/27 12:24:58] root INFO:             use_shared_memory : True
+[2021/09/27 12:24:58] root INFO:         sampler : 
+[2021/09/27 12:24:58] root INFO:             batch_size : 64
+[2021/09/27 12:24:58] root INFO:             drop_last : False
+[2021/09/27 12:24:58] root INFO:             name : DistributedBatchSampler
+[2021/09/27 12:24:58] root INFO:             shuffle : False
+[2021/09/27 12:24:58] root INFO:     Train : 
+[2021/09/27 12:24:58] root INFO:         dataset : 
+[2021/09/27 12:24:58] root INFO:             cls_label_path : ./dataset/train_list.txt
+[2021/09/27 12:24:58] root INFO:             image_root : ./dataset/
+[2021/09/27 12:24:58] root INFO:             name : ImageNetDataset
+[2021/09/27 12:24:58] root INFO:             transform_ops : 
+[2021/09/27 12:24:58] root INFO:                 DecodeImage : 
+[2021/09/27 12:24:58] root INFO:                     channel_first : False
+[2021/09/27 12:24:58] root INFO:                     to_rgb : True
+[2021/09/27 12:24:58] root INFO:                 RandCropImage : 
+[2021/09/27 12:24:58] root INFO:                     size : 224
+[2021/09/27 12:24:58] root INFO:                 RandFlipImage : 
+[2021/09/27 12:24:58] root INFO:                     flip_code : 1
+[2021/09/27 12:24:58] root INFO:                 NormalizeImage : 
+[2021/09/27 12:24:58] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 12:24:58] root INFO:                     order : 
+[2021/09/27 12:24:58] root INFO:                     scale : 1.0/255.0
+[2021/09/27 12:24:58] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 12:24:58] root INFO:         loader : 
+[2021/09/27 12:24:58] root INFO:             num_workers : 0
+[2021/09/27 12:24:58] root INFO:             use_shared_memory : True
+[2021/09/27 12:24:58] root INFO:         sampler : 
+[2021/09/27 12:24:58] root INFO:             batch_size : 32
+[2021/09/27 12:24:58] root INFO:             drop_last : False
+[2021/09/27 12:24:58] root INFO:             name : DistributedBatchSampler
+[2021/09/27 12:24:58] root INFO:             shuffle : True
+[2021/09/27 12:24:58] root INFO: Global : 
+[2021/09/27 12:24:58] root INFO:     checkpoints : None
+[2021/09/27 12:24:58] root INFO:     class_num : 5
+[2021/09/27 12:24:58] root INFO:     device : cpu
+[2021/09/27 12:24:58] root INFO:     epochs : 100
+[2021/09/27 12:24:58] root INFO:     eval_during_train : True
+[2021/09/27 12:24:58] root INFO:     eval_interval : 10
+[2021/09/27 12:24:58] root INFO:     image_shape : [3, 224, 224]
+[2021/09/27 12:24:58] root INFO:     output_dir : ./output/
+[2021/09/27 12:24:58] root INFO:     pretrained_model : ./PaddleClas/output/ResNet50_vd/latest/latest
+[2021/09/27 12:24:58] root INFO:     print_batch_step : 10
+[2021/09/27 12:24:58] root INFO:     save_inference_dir : ./inference
+[2021/09/27 12:24:58] root INFO:     save_interval : 1
+[2021/09/27 12:24:58] root INFO:     use_visualdl : False
+[2021/09/27 12:24:58] root INFO: Infer : 
+[2021/09/27 12:24:58] root INFO:     PostProcess : 
+[2021/09/27 12:24:58] root INFO:         class_id_map_file : ./PaddleClas/dataset/labels.txt
+[2021/09/27 12:24:58] root INFO:         name : Topk
+[2021/09/27 12:24:58] root INFO:         topk : 1
+[2021/09/27 12:24:58] root INFO:     batch_size : 10
+[2021/09/27 12:24:58] root INFO:     infer_imgs : ./src/a.jpg
+[2021/09/27 12:24:58] root INFO:     transforms : 
+[2021/09/27 12:24:58] root INFO:         DecodeImage : 
+[2021/09/27 12:24:58] root INFO:             channel_first : False
+[2021/09/27 12:24:58] root INFO:             to_rgb : True
+[2021/09/27 12:24:58] root INFO:         ResizeImage : 
+[2021/09/27 12:24:58] root INFO:             resize_short : 256
+[2021/09/27 12:24:58] root INFO:         CropImage : 
+[2021/09/27 12:24:58] root INFO:             size : 224
+[2021/09/27 12:24:58] root INFO:         NormalizeImage : 
+[2021/09/27 12:24:58] root INFO:             mean : [0.485, 0.456, 0.406]
+[2021/09/27 12:24:58] root INFO:             order : 
+[2021/09/27 12:24:58] root INFO:             scale : 1.0/255.0
+[2021/09/27 12:24:58] root INFO:             std : [0.229, 0.224, 0.225]
+[2021/09/27 12:24:58] root INFO:         ToCHWImage : None
+[2021/09/27 12:24:58] root INFO: Loss : 
+[2021/09/27 12:24:58] root INFO:     Eval : 
+[2021/09/27 12:24:58] root INFO:         CELoss : 
+[2021/09/27 12:24:58] root INFO:             weight : 1.0
+[2021/09/27 12:24:58] root INFO:     Train : 
+[2021/09/27 12:24:58] root INFO:         CELoss : 
+[2021/09/27 12:24:58] root INFO:             weight : 1.0
+[2021/09/27 12:24:58] root INFO: Metric : 
+[2021/09/27 12:24:58] root INFO:     Eval : 
+[2021/09/27 12:24:58] root INFO:         TopkAcc : 
+[2021/09/27 12:24:58] root INFO:             topk : [1, 5]
+[2021/09/27 12:24:58] root INFO:     Train : 
+[2021/09/27 12:24:58] root INFO:         TopkAcc : 
+[2021/09/27 12:24:58] root INFO:             topk : [1, 5]
+[2021/09/27 12:24:58] root INFO: Optimizer : 
+[2021/09/27 12:24:58] root INFO:     lr : 
+[2021/09/27 12:24:58] root INFO:         learning_rate : 0.0125
+[2021/09/27 12:24:58] root INFO:         name : Cosine
+[2021/09/27 12:24:58] root INFO:         warmup_epoch : 5
+[2021/09/27 12:24:58] root INFO:     momentum : 0.9
+[2021/09/27 12:24:58] root INFO:     name : Momentum
+[2021/09/27 12:24:58] root INFO:     regularizer : 
+[2021/09/27 12:24:58] root INFO:         coeff : 1e-05
+[2021/09/27 12:24:58] root INFO:         name : L2
+[2021/09/27 12:25:00] root INFO: train with paddle 2.1.3 and device CPUPlace
+[2021/09/27 12:25:06] root INFO: 
+===========================================================
+==        PaddleClas is powered by PaddlePaddle !        ==
+===========================================================
+==                                                       ==
+==   For more info please go to the following website.   ==
+==                                                       ==
+==       https://github.com/PaddlePaddle/PaddleClas      ==
+===========================================================
+
+[2021/09/27 12:25:06] root INFO: Arch : 
+[2021/09/27 12:25:06] root INFO:     name : ResNet50_vd
+[2021/09/27 12:25:06] root INFO: DataLoader : 
+[2021/09/27 12:25:06] root INFO:     Eval : 
+[2021/09/27 12:25:06] root INFO:         dataset : 
+[2021/09/27 12:25:06] root INFO:             cls_label_path : ./dataset/val_list.txt
+[2021/09/27 12:25:06] root INFO:             image_root : ./dataset/
+[2021/09/27 12:25:06] root INFO:             name : ImageNetDataset
+[2021/09/27 12:25:06] root INFO:             transform_ops : 
+[2021/09/27 12:25:06] root INFO:                 DecodeImage : 
+[2021/09/27 12:25:06] root INFO:                     channel_first : False
+[2021/09/27 12:25:06] root INFO:                     to_rgb : True
+[2021/09/27 12:25:06] root INFO:                 ResizeImage : 
+[2021/09/27 12:25:06] root INFO:                     resize_short : 256
+[2021/09/27 12:25:06] root INFO:                 CropImage : 
+[2021/09/27 12:25:06] root INFO:                     size : 224
+[2021/09/27 12:25:06] root INFO:                 NormalizeImage : 
+[2021/09/27 12:25:06] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 12:25:06] root INFO:                     order : 
+[2021/09/27 12:25:06] root INFO:                     scale : 1.0/255.0
+[2021/09/27 12:25:06] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 12:25:06] root INFO:         loader : 
+[2021/09/27 12:25:06] root INFO:             num_workers : 0
+[2021/09/27 12:25:06] root INFO:             use_shared_memory : True
+[2021/09/27 12:25:06] root INFO:         sampler : 
+[2021/09/27 12:25:06] root INFO:             batch_size : 64
+[2021/09/27 12:25:06] root INFO:             drop_last : False
+[2021/09/27 12:25:06] root INFO:             name : DistributedBatchSampler
+[2021/09/27 12:25:06] root INFO:             shuffle : False
+[2021/09/27 12:25:06] root INFO:     Train : 
+[2021/09/27 12:25:06] root INFO:         dataset : 
+[2021/09/27 12:25:06] root INFO:             cls_label_path : ./dataset/train_list.txt
+[2021/09/27 12:25:06] root INFO:             image_root : ./dataset/
+[2021/09/27 12:25:06] root INFO:             name : ImageNetDataset
+[2021/09/27 12:25:06] root INFO:             transform_ops : 
+[2021/09/27 12:25:06] root INFO:                 DecodeImage : 
+[2021/09/27 12:25:06] root INFO:                     channel_first : False
+[2021/09/27 12:25:06] root INFO:                     to_rgb : True
+[2021/09/27 12:25:06] root INFO:                 RandCropImage : 
+[2021/09/27 12:25:06] root INFO:                     size : 224
+[2021/09/27 12:25:06] root INFO:                 RandFlipImage : 
+[2021/09/27 12:25:06] root INFO:                     flip_code : 1
+[2021/09/27 12:25:06] root INFO:                 NormalizeImage : 
+[2021/09/27 12:25:06] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 12:25:06] root INFO:                     order : 
+[2021/09/27 12:25:06] root INFO:                     scale : 1.0/255.0
+[2021/09/27 12:25:06] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 12:25:06] root INFO:         loader : 
+[2021/09/27 12:25:06] root INFO:             num_workers : 0
+[2021/09/27 12:25:06] root INFO:             use_shared_memory : True
+[2021/09/27 12:25:06] root INFO:         sampler : 
+[2021/09/27 12:25:06] root INFO:             batch_size : 32
+[2021/09/27 12:25:06] root INFO:             drop_last : False
+[2021/09/27 12:25:06] root INFO:             name : DistributedBatchSampler
+[2021/09/27 12:25:06] root INFO:             shuffle : True
+[2021/09/27 12:25:06] root INFO: Global : 
+[2021/09/27 12:25:06] root INFO:     checkpoints : None
+[2021/09/27 12:25:06] root INFO:     class_num : 5
+[2021/09/27 12:25:06] root INFO:     device : cpu
+[2021/09/27 12:25:06] root INFO:     epochs : 100
+[2021/09/27 12:25:06] root INFO:     eval_during_train : True
+[2021/09/27 12:25:06] root INFO:     eval_interval : 10
+[2021/09/27 12:25:06] root INFO:     image_shape : [3, 224, 224]
+[2021/09/27 12:25:06] root INFO:     output_dir : ./output/
+[2021/09/27 12:25:06] root INFO:     pretrained_model : ./PaddleClas/output/ResNet50_vd/latest/latest
+[2021/09/27 12:25:06] root INFO:     print_batch_step : 10
+[2021/09/27 12:25:06] root INFO:     save_inference_dir : ./inference
+[2021/09/27 12:25:06] root INFO:     save_interval : 1
+[2021/09/27 12:25:06] root INFO:     use_visualdl : False
+[2021/09/27 12:25:06] root INFO: Infer : 
+[2021/09/27 12:25:06] root INFO:     PostProcess : 
+[2021/09/27 12:25:06] root INFO:         class_id_map_file : ./PaddleClas/dataset/labels.txt
+[2021/09/27 12:25:06] root INFO:         name : Topk
+[2021/09/27 12:25:06] root INFO:         topk : 1
+[2021/09/27 12:25:06] root INFO:     batch_size : 10
+[2021/09/27 12:25:06] root INFO:     infer_imgs : ./src/s.jpg
+[2021/09/27 12:25:06] root INFO:     transforms : 
+[2021/09/27 12:25:06] root INFO:         DecodeImage : 
+[2021/09/27 12:25:06] root INFO:             channel_first : False
+[2021/09/27 12:25:06] root INFO:             to_rgb : True
+[2021/09/27 12:25:06] root INFO:         ResizeImage : 
+[2021/09/27 12:25:06] root INFO:             resize_short : 256
+[2021/09/27 12:25:06] root INFO:         CropImage : 
+[2021/09/27 12:25:06] root INFO:             size : 224
+[2021/09/27 12:25:06] root INFO:         NormalizeImage : 
+[2021/09/27 12:25:06] root INFO:             mean : [0.485, 0.456, 0.406]
+[2021/09/27 12:25:06] root INFO:             order : 
+[2021/09/27 12:25:06] root INFO:             scale : 1.0/255.0
+[2021/09/27 12:25:06] root INFO:             std : [0.229, 0.224, 0.225]
+[2021/09/27 12:25:06] root INFO:         ToCHWImage : None
+[2021/09/27 12:25:06] root INFO: Loss : 
+[2021/09/27 12:25:06] root INFO:     Eval : 
+[2021/09/27 12:25:06] root INFO:         CELoss : 
+[2021/09/27 12:25:06] root INFO:             weight : 1.0
+[2021/09/27 12:25:06] root INFO:     Train : 
+[2021/09/27 12:25:06] root INFO:         CELoss : 
+[2021/09/27 12:25:06] root INFO:             weight : 1.0
+[2021/09/27 12:25:06] root INFO: Metric : 
+[2021/09/27 12:25:06] root INFO:     Eval : 
+[2021/09/27 12:25:06] root INFO:         TopkAcc : 
+[2021/09/27 12:25:06] root INFO:             topk : [1, 5]
+[2021/09/27 12:25:06] root INFO:     Train : 
+[2021/09/27 12:25:06] root INFO:         TopkAcc : 
+[2021/09/27 12:25:06] root INFO:             topk : [1, 5]
+[2021/09/27 12:25:06] root INFO: Optimizer : 
+[2021/09/27 12:25:06] root INFO:     lr : 
+[2021/09/27 12:25:06] root INFO:         learning_rate : 0.0125
+[2021/09/27 12:25:06] root INFO:         name : Cosine
+[2021/09/27 12:25:06] root INFO:         warmup_epoch : 5
+[2021/09/27 12:25:06] root INFO:     momentum : 0.9
+[2021/09/27 12:25:06] root INFO:     name : Momentum
+[2021/09/27 12:25:06] root INFO:     regularizer : 
+[2021/09/27 12:25:06] root INFO:         coeff : 1e-05
+[2021/09/27 12:25:06] root INFO:         name : L2
+[2021/09/27 12:25:08] root INFO: train with paddle 2.1.3 and device CPUPlace
+[2021/09/27 12:25:14] root INFO: 
+===========================================================
+==        PaddleClas is powered by PaddlePaddle !        ==
+===========================================================
+==                                                       ==
+==   For more info please go to the following website.   ==
+==                                                       ==
+==       https://github.com/PaddlePaddle/PaddleClas      ==
+===========================================================
+
+[2021/09/27 12:25:14] root INFO: Arch : 
+[2021/09/27 12:25:14] root INFO:     name : ResNet50_vd
+[2021/09/27 12:25:14] root INFO: DataLoader : 
+[2021/09/27 12:25:14] root INFO:     Eval : 
+[2021/09/27 12:25:14] root INFO:         dataset : 
+[2021/09/27 12:25:14] root INFO:             cls_label_path : ./dataset/val_list.txt
+[2021/09/27 12:25:14] root INFO:             image_root : ./dataset/
+[2021/09/27 12:25:14] root INFO:             name : ImageNetDataset
+[2021/09/27 12:25:14] root INFO:             transform_ops : 
+[2021/09/27 12:25:14] root INFO:                 DecodeImage : 
+[2021/09/27 12:25:14] root INFO:                     channel_first : False
+[2021/09/27 12:25:14] root INFO:                     to_rgb : True
+[2021/09/27 12:25:14] root INFO:                 ResizeImage : 
+[2021/09/27 12:25:14] root INFO:                     resize_short : 256
+[2021/09/27 12:25:14] root INFO:                 CropImage : 
+[2021/09/27 12:25:14] root INFO:                     size : 224
+[2021/09/27 12:25:14] root INFO:                 NormalizeImage : 
+[2021/09/27 12:25:14] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 12:25:14] root INFO:                     order : 
+[2021/09/27 12:25:14] root INFO:                     scale : 1.0/255.0
+[2021/09/27 12:25:14] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 12:25:14] root INFO:         loader : 
+[2021/09/27 12:25:14] root INFO:             num_workers : 0
+[2021/09/27 12:25:14] root INFO:             use_shared_memory : True
+[2021/09/27 12:25:14] root INFO:         sampler : 
+[2021/09/27 12:25:14] root INFO:             batch_size : 64
+[2021/09/27 12:25:14] root INFO:             drop_last : False
+[2021/09/27 12:25:14] root INFO:             name : DistributedBatchSampler
+[2021/09/27 12:25:14] root INFO:             shuffle : False
+[2021/09/27 12:25:14] root INFO:     Train : 
+[2021/09/27 12:25:14] root INFO:         dataset : 
+[2021/09/27 12:25:14] root INFO:             cls_label_path : ./dataset/train_list.txt
+[2021/09/27 12:25:14] root INFO:             image_root : ./dataset/
+[2021/09/27 12:25:14] root INFO:             name : ImageNetDataset
+[2021/09/27 12:25:14] root INFO:             transform_ops : 
+[2021/09/27 12:25:14] root INFO:                 DecodeImage : 
+[2021/09/27 12:25:14] root INFO:                     channel_first : False
+[2021/09/27 12:25:14] root INFO:                     to_rgb : True
+[2021/09/27 12:25:14] root INFO:                 RandCropImage : 
+[2021/09/27 12:25:14] root INFO:                     size : 224
+[2021/09/27 12:25:14] root INFO:                 RandFlipImage : 
+[2021/09/27 12:25:14] root INFO:                     flip_code : 1
+[2021/09/27 12:25:14] root INFO:                 NormalizeImage : 
+[2021/09/27 12:25:14] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 12:25:14] root INFO:                     order : 
+[2021/09/27 12:25:14] root INFO:                     scale : 1.0/255.0
+[2021/09/27 12:25:14] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 12:25:14] root INFO:         loader : 
+[2021/09/27 12:25:14] root INFO:             num_workers : 0
+[2021/09/27 12:25:14] root INFO:             use_shared_memory : True
+[2021/09/27 12:25:14] root INFO:         sampler : 
+[2021/09/27 12:25:14] root INFO:             batch_size : 32
+[2021/09/27 12:25:14] root INFO:             drop_last : False
+[2021/09/27 12:25:14] root INFO:             name : DistributedBatchSampler
+[2021/09/27 12:25:14] root INFO:             shuffle : True
+[2021/09/27 12:25:14] root INFO: Global : 
+[2021/09/27 12:25:14] root INFO:     checkpoints : None
+[2021/09/27 12:25:14] root INFO:     class_num : 5
+[2021/09/27 12:25:14] root INFO:     device : cpu
+[2021/09/27 12:25:14] root INFO:     epochs : 100
+[2021/09/27 12:25:14] root INFO:     eval_during_train : True
+[2021/09/27 12:25:14] root INFO:     eval_interval : 10
+[2021/09/27 12:25:14] root INFO:     image_shape : [3, 224, 224]
+[2021/09/27 12:25:14] root INFO:     output_dir : ./output/
+[2021/09/27 12:25:14] root INFO:     pretrained_model : ./PaddleClas/output/ResNet50_vd/latest/latest
+[2021/09/27 12:25:14] root INFO:     print_batch_step : 10
+[2021/09/27 12:25:14] root INFO:     save_inference_dir : ./inference
+[2021/09/27 12:25:14] root INFO:     save_interval : 1
+[2021/09/27 12:25:14] root INFO:     use_visualdl : False
+[2021/09/27 12:25:14] root INFO: Infer : 
+[2021/09/27 12:25:14] root INFO:     PostProcess : 
+[2021/09/27 12:25:14] root INFO:         class_id_map_file : ./PaddleClas/dataset/labels.txt
+[2021/09/27 12:25:14] root INFO:         name : Topk
+[2021/09/27 12:25:14] root INFO:         topk : 1
+[2021/09/27 12:25:14] root INFO:     batch_size : 10
+[2021/09/27 12:25:14] root INFO:     infer_imgs : ./src/f.jpg
+[2021/09/27 12:25:14] root INFO:     transforms : 
+[2021/09/27 12:25:14] root INFO:         DecodeImage : 
+[2021/09/27 12:25:14] root INFO:             channel_first : False
+[2021/09/27 12:25:14] root INFO:             to_rgb : True
+[2021/09/27 12:25:14] root INFO:         ResizeImage : 
+[2021/09/27 12:25:14] root INFO:             resize_short : 256
+[2021/09/27 12:25:14] root INFO:         CropImage : 
+[2021/09/27 12:25:14] root INFO:             size : 224
+[2021/09/27 12:25:14] root INFO:         NormalizeImage : 
+[2021/09/27 12:25:14] root INFO:             mean : [0.485, 0.456, 0.406]
+[2021/09/27 12:25:14] root INFO:             order : 
+[2021/09/27 12:25:14] root INFO:             scale : 1.0/255.0
+[2021/09/27 12:25:14] root INFO:             std : [0.229, 0.224, 0.225]
+[2021/09/27 12:25:14] root INFO:         ToCHWImage : None
+[2021/09/27 12:25:14] root INFO: Loss : 
+[2021/09/27 12:25:14] root INFO:     Eval : 
+[2021/09/27 12:25:14] root INFO:         CELoss : 
+[2021/09/27 12:25:14] root INFO:             weight : 1.0
+[2021/09/27 12:25:14] root INFO:     Train : 
+[2021/09/27 12:25:14] root INFO:         CELoss : 
+[2021/09/27 12:25:14] root INFO:             weight : 1.0
+[2021/09/27 12:25:14] root INFO: Metric : 
+[2021/09/27 12:25:14] root INFO:     Eval : 
+[2021/09/27 12:25:14] root INFO:         TopkAcc : 
+[2021/09/27 12:25:14] root INFO:             topk : [1, 5]
+[2021/09/27 12:25:14] root INFO:     Train : 
+[2021/09/27 12:25:14] root INFO:         TopkAcc : 
+[2021/09/27 12:25:14] root INFO:             topk : [1, 5]
+[2021/09/27 12:25:14] root INFO: Optimizer : 
+[2021/09/27 12:25:14] root INFO:     lr : 
+[2021/09/27 12:25:14] root INFO:         learning_rate : 0.0125
+[2021/09/27 12:25:14] root INFO:         name : Cosine
+[2021/09/27 12:25:14] root INFO:         warmup_epoch : 5
+[2021/09/27 12:25:14] root INFO:     momentum : 0.9
+[2021/09/27 12:25:14] root INFO:     name : Momentum
+[2021/09/27 12:25:14] root INFO:     regularizer : 
+[2021/09/27 12:25:14] root INFO:         coeff : 1e-05
+[2021/09/27 12:25:14] root INFO:         name : L2
+[2021/09/27 12:25:16] root INFO: train with paddle 2.1.3 and device CPUPlace
+[2021/09/27 12:53:17] root INFO: 
+===========================================================
+==        PaddleClas is powered by PaddlePaddle !        ==
+===========================================================
+==                                                       ==
+==   For more info please go to the following website.   ==
+==                                                       ==
+==       https://github.com/PaddlePaddle/PaddleClas      ==
+===========================================================
+
+[2021/09/27 12:53:17] root INFO: Arch : 
+[2021/09/27 12:53:17] root INFO:     name : ResNet50_vd
+[2021/09/27 12:53:17] root INFO: DataLoader : 
+[2021/09/27 12:53:17] root INFO:     Eval : 
+[2021/09/27 12:53:17] root INFO:         dataset : 
+[2021/09/27 12:53:17] root INFO:             cls_label_path : ./dataset/val_list.txt
+[2021/09/27 12:53:17] root INFO:             image_root : ./dataset/
+[2021/09/27 12:53:17] root INFO:             name : ImageNetDataset
+[2021/09/27 12:53:17] root INFO:             transform_ops : 
+[2021/09/27 12:53:17] root INFO:                 DecodeImage : 
+[2021/09/27 12:53:17] root INFO:                     channel_first : False
+[2021/09/27 12:53:17] root INFO:                     to_rgb : True
+[2021/09/27 12:53:17] root INFO:                 ResizeImage : 
+[2021/09/27 12:53:17] root INFO:                     resize_short : 256
+[2021/09/27 12:53:17] root INFO:                 CropImage : 
+[2021/09/27 12:53:17] root INFO:                     size : 224
+[2021/09/27 12:53:17] root INFO:                 NormalizeImage : 
+[2021/09/27 12:53:17] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 12:53:17] root INFO:                     order : 
+[2021/09/27 12:53:17] root INFO:                     scale : 1.0/255.0
+[2021/09/27 12:53:17] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 12:53:17] root INFO:         loader : 
+[2021/09/27 12:53:17] root INFO:             num_workers : 0
+[2021/09/27 12:53:17] root INFO:             use_shared_memory : True
+[2021/09/27 12:53:17] root INFO:         sampler : 
+[2021/09/27 12:53:17] root INFO:             batch_size : 64
+[2021/09/27 12:53:17] root INFO:             drop_last : False
+[2021/09/27 12:53:17] root INFO:             name : DistributedBatchSampler
+[2021/09/27 12:53:17] root INFO:             shuffle : False
+[2021/09/27 12:53:17] root INFO:     Train : 
+[2021/09/27 12:53:17] root INFO:         dataset : 
+[2021/09/27 12:53:17] root INFO:             cls_label_path : ./dataset/train_list.txt
+[2021/09/27 12:53:17] root INFO:             image_root : ./dataset/
+[2021/09/27 12:53:17] root INFO:             name : ImageNetDataset
+[2021/09/27 12:53:17] root INFO:             transform_ops : 
+[2021/09/27 12:53:17] root INFO:                 DecodeImage : 
+[2021/09/27 12:53:17] root INFO:                     channel_first : False
+[2021/09/27 12:53:17] root INFO:                     to_rgb : True
+[2021/09/27 12:53:17] root INFO:                 RandCropImage : 
+[2021/09/27 12:53:17] root INFO:                     size : 224
+[2021/09/27 12:53:17] root INFO:                 RandFlipImage : 
+[2021/09/27 12:53:17] root INFO:                     flip_code : 1
+[2021/09/27 12:53:17] root INFO:                 NormalizeImage : 
+[2021/09/27 12:53:17] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 12:53:17] root INFO:                     order : 
+[2021/09/27 12:53:17] root INFO:                     scale : 1.0/255.0
+[2021/09/27 12:53:17] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 12:53:17] root INFO:         loader : 
+[2021/09/27 12:53:17] root INFO:             num_workers : 0
+[2021/09/27 12:53:17] root INFO:             use_shared_memory : True
+[2021/09/27 12:53:17] root INFO:         sampler : 
+[2021/09/27 12:53:17] root INFO:             batch_size : 32
+[2021/09/27 12:53:17] root INFO:             drop_last : False
+[2021/09/27 12:53:17] root INFO:             name : DistributedBatchSampler
+[2021/09/27 12:53:17] root INFO:             shuffle : True
+[2021/09/27 12:53:17] root INFO: Global : 
+[2021/09/27 12:53:17] root INFO:     checkpoints : None
+[2021/09/27 12:53:17] root INFO:     class_num : 5
+[2021/09/27 12:53:17] root INFO:     device : cpu
+[2021/09/27 12:53:17] root INFO:     epochs : 100
+[2021/09/27 12:53:17] root INFO:     eval_during_train : True
+[2021/09/27 12:53:17] root INFO:     eval_interval : 10
+[2021/09/27 12:53:17] root INFO:     image_shape : [3, 224, 224]
+[2021/09/27 12:53:17] root INFO:     output_dir : ./output/
+[2021/09/27 12:53:17] root INFO:     pretrained_model : ./PaddleClas/output/ResNet50_vd/latest/latest
+[2021/09/27 12:53:17] root INFO:     print_batch_step : 10
+[2021/09/27 12:53:17] root INFO:     save_inference_dir : ./inference
+[2021/09/27 12:53:17] root INFO:     save_interval : 1
+[2021/09/27 12:53:17] root INFO:     use_visualdl : False
+[2021/09/27 12:53:17] root INFO: Infer : 
+[2021/09/27 12:53:17] root INFO:     PostProcess : 
+[2021/09/27 12:53:17] root INFO:         class_id_map_file : ./PaddleClas/dataset/labels.txt
+[2021/09/27 12:53:17] root INFO:         name : Topk
+[2021/09/27 12:53:17] root INFO:         topk : 1
+[2021/09/27 12:53:17] root INFO:     batch_size : 10
+[2021/09/27 12:53:17] root INFO:     infer_imgs : ./src/s.jpg
+[2021/09/27 12:53:17] root INFO:     transforms : 
+[2021/09/27 12:53:17] root INFO:         DecodeImage : 
+[2021/09/27 12:53:17] root INFO:             channel_first : False
+[2021/09/27 12:53:17] root INFO:             to_rgb : True
+[2021/09/27 12:53:17] root INFO:         ResizeImage : 
+[2021/09/27 12:53:17] root INFO:             resize_short : 256
+[2021/09/27 12:53:17] root INFO:         CropImage : 
+[2021/09/27 12:53:17] root INFO:             size : 224
+[2021/09/27 12:53:17] root INFO:         NormalizeImage : 
+[2021/09/27 12:53:17] root INFO:             mean : [0.485, 0.456, 0.406]
+[2021/09/27 12:53:17] root INFO:             order : 
+[2021/09/27 12:53:17] root INFO:             scale : 1.0/255.0
+[2021/09/27 12:53:17] root INFO:             std : [0.229, 0.224, 0.225]
+[2021/09/27 12:53:17] root INFO:         ToCHWImage : None
+[2021/09/27 12:53:17] root INFO: Loss : 
+[2021/09/27 12:53:17] root INFO:     Eval : 
+[2021/09/27 12:53:17] root INFO:         CELoss : 
+[2021/09/27 12:53:17] root INFO:             weight : 1.0
+[2021/09/27 12:53:17] root INFO:     Train : 
+[2021/09/27 12:53:17] root INFO:         CELoss : 
+[2021/09/27 12:53:17] root INFO:             weight : 1.0
+[2021/09/27 12:53:17] root INFO: Metric : 
+[2021/09/27 12:53:17] root INFO:     Eval : 
+[2021/09/27 12:53:17] root INFO:         TopkAcc : 
+[2021/09/27 12:53:17] root INFO:             topk : [1, 5]
+[2021/09/27 12:53:17] root INFO:     Train : 
+[2021/09/27 12:53:17] root INFO:         TopkAcc : 
+[2021/09/27 12:53:17] root INFO:             topk : [1, 5]
+[2021/09/27 12:53:17] root INFO: Optimizer : 
+[2021/09/27 12:53:17] root INFO:     lr : 
+[2021/09/27 12:53:17] root INFO:         learning_rate : 0.0125
+[2021/09/27 12:53:17] root INFO:         name : Cosine
+[2021/09/27 12:53:17] root INFO:         warmup_epoch : 5
+[2021/09/27 12:53:17] root INFO:     momentum : 0.9
+[2021/09/27 12:53:17] root INFO:     name : Momentum
+[2021/09/27 12:53:17] root INFO:     regularizer : 
+[2021/09/27 12:53:17] root INFO:         coeff : 1e-05
+[2021/09/27 12:53:17] root INFO:         name : L2
+[2021/09/27 12:53:19] root INFO: train with paddle 2.1.3 and device CPUPlace
+[2021/09/27 12:53:27] root INFO: 
+===========================================================
+==        PaddleClas is powered by PaddlePaddle !        ==
+===========================================================
+==                                                       ==
+==   For more info please go to the following website.   ==
+==                                                       ==
+==       https://github.com/PaddlePaddle/PaddleClas      ==
+===========================================================
+
+[2021/09/27 12:53:27] root INFO: Arch : 
+[2021/09/27 12:53:27] root INFO:     name : ResNet50_vd
+[2021/09/27 12:53:27] root INFO: DataLoader : 
+[2021/09/27 12:53:27] root INFO:     Eval : 
+[2021/09/27 12:53:27] root INFO:         dataset : 
+[2021/09/27 12:53:27] root INFO:             cls_label_path : ./dataset/val_list.txt
+[2021/09/27 12:53:27] root INFO:             image_root : ./dataset/
+[2021/09/27 12:53:27] root INFO:             name : ImageNetDataset
+[2021/09/27 12:53:27] root INFO:             transform_ops : 
+[2021/09/27 12:53:27] root INFO:                 DecodeImage : 
+[2021/09/27 12:53:27] root INFO:                     channel_first : False
+[2021/09/27 12:53:27] root INFO:                     to_rgb : True
+[2021/09/27 12:53:27] root INFO:                 ResizeImage : 
+[2021/09/27 12:53:27] root INFO:                     resize_short : 256
+[2021/09/27 12:53:27] root INFO:                 CropImage : 
+[2021/09/27 12:53:27] root INFO:                     size : 224
+[2021/09/27 12:53:27] root INFO:                 NormalizeImage : 
+[2021/09/27 12:53:27] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 12:53:27] root INFO:                     order : 
+[2021/09/27 12:53:27] root INFO:                     scale : 1.0/255.0
+[2021/09/27 12:53:27] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 12:53:27] root INFO:         loader : 
+[2021/09/27 12:53:27] root INFO:             num_workers : 0
+[2021/09/27 12:53:27] root INFO:             use_shared_memory : True
+[2021/09/27 12:53:27] root INFO:         sampler : 
+[2021/09/27 12:53:27] root INFO:             batch_size : 64
+[2021/09/27 12:53:27] root INFO:             drop_last : False
+[2021/09/27 12:53:27] root INFO:             name : DistributedBatchSampler
+[2021/09/27 12:53:27] root INFO:             shuffle : False
+[2021/09/27 12:53:27] root INFO:     Train : 
+[2021/09/27 12:53:27] root INFO:         dataset : 
+[2021/09/27 12:53:27] root INFO:             cls_label_path : ./dataset/train_list.txt
+[2021/09/27 12:53:27] root INFO:             image_root : ./dataset/
+[2021/09/27 12:53:27] root INFO:             name : ImageNetDataset
+[2021/09/27 12:53:27] root INFO:             transform_ops : 
+[2021/09/27 12:53:27] root INFO:                 DecodeImage : 
+[2021/09/27 12:53:27] root INFO:                     channel_first : False
+[2021/09/27 12:53:27] root INFO:                     to_rgb : True
+[2021/09/27 12:53:27] root INFO:                 RandCropImage : 
+[2021/09/27 12:53:27] root INFO:                     size : 224
+[2021/09/27 12:53:27] root INFO:                 RandFlipImage : 
+[2021/09/27 12:53:27] root INFO:                     flip_code : 1
+[2021/09/27 12:53:27] root INFO:                 NormalizeImage : 
+[2021/09/27 12:53:27] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 12:53:27] root INFO:                     order : 
+[2021/09/27 12:53:27] root INFO:                     scale : 1.0/255.0
+[2021/09/27 12:53:27] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 12:53:27] root INFO:         loader : 
+[2021/09/27 12:53:27] root INFO:             num_workers : 0
+[2021/09/27 12:53:27] root INFO:             use_shared_memory : True
+[2021/09/27 12:53:27] root INFO:         sampler : 
+[2021/09/27 12:53:27] root INFO:             batch_size : 32
+[2021/09/27 12:53:27] root INFO:             drop_last : False
+[2021/09/27 12:53:27] root INFO:             name : DistributedBatchSampler
+[2021/09/27 12:53:27] root INFO:             shuffle : True
+[2021/09/27 12:53:27] root INFO: Global : 
+[2021/09/27 12:53:27] root INFO:     checkpoints : None
+[2021/09/27 12:53:27] root INFO:     class_num : 5
+[2021/09/27 12:53:27] root INFO:     device : cpu
+[2021/09/27 12:53:27] root INFO:     epochs : 100
+[2021/09/27 12:53:27] root INFO:     eval_during_train : True
+[2021/09/27 12:53:27] root INFO:     eval_interval : 10
+[2021/09/27 12:53:27] root INFO:     image_shape : [3, 224, 224]
+[2021/09/27 12:53:27] root INFO:     output_dir : ./output/
+[2021/09/27 12:53:27] root INFO:     pretrained_model : ./PaddleClas/output/ResNet50_vd/latest/latest
+[2021/09/27 12:53:27] root INFO:     print_batch_step : 10
+[2021/09/27 12:53:27] root INFO:     save_inference_dir : ./inference
+[2021/09/27 12:53:27] root INFO:     save_interval : 1
+[2021/09/27 12:53:27] root INFO:     use_visualdl : False
+[2021/09/27 12:53:27] root INFO: Infer : 
+[2021/09/27 12:53:27] root INFO:     PostProcess : 
+[2021/09/27 12:53:27] root INFO:         class_id_map_file : ./PaddleClas/dataset/labels.txt
+[2021/09/27 12:53:27] root INFO:         name : Topk
+[2021/09/27 12:53:27] root INFO:         topk : 1
+[2021/09/27 12:53:27] root INFO:     batch_size : 10
+[2021/09/27 12:53:27] root INFO:     infer_imgs : ./src/a.jpg
+[2021/09/27 12:53:27] root INFO:     transforms : 
+[2021/09/27 12:53:27] root INFO:         DecodeImage : 
+[2021/09/27 12:53:27] root INFO:             channel_first : False
+[2021/09/27 12:53:27] root INFO:             to_rgb : True
+[2021/09/27 12:53:27] root INFO:         ResizeImage : 
+[2021/09/27 12:53:27] root INFO:             resize_short : 256
+[2021/09/27 12:53:27] root INFO:         CropImage : 
+[2021/09/27 12:53:27] root INFO:             size : 224
+[2021/09/27 12:53:27] root INFO:         NormalizeImage : 
+[2021/09/27 12:53:27] root INFO:             mean : [0.485, 0.456, 0.406]
+[2021/09/27 12:53:27] root INFO:             order : 
+[2021/09/27 12:53:27] root INFO:             scale : 1.0/255.0
+[2021/09/27 12:53:27] root INFO:             std : [0.229, 0.224, 0.225]
+[2021/09/27 12:53:27] root INFO:         ToCHWImage : None
+[2021/09/27 12:53:27] root INFO: Loss : 
+[2021/09/27 12:53:27] root INFO:     Eval : 
+[2021/09/27 12:53:27] root INFO:         CELoss : 
+[2021/09/27 12:53:27] root INFO:             weight : 1.0
+[2021/09/27 12:53:27] root INFO:     Train : 
+[2021/09/27 12:53:27] root INFO:         CELoss : 
+[2021/09/27 12:53:27] root INFO:             weight : 1.0
+[2021/09/27 12:53:27] root INFO: Metric : 
+[2021/09/27 12:53:27] root INFO:     Eval : 
+[2021/09/27 12:53:27] root INFO:         TopkAcc : 
+[2021/09/27 12:53:27] root INFO:             topk : [1, 5]
+[2021/09/27 12:53:27] root INFO:     Train : 
+[2021/09/27 12:53:27] root INFO:         TopkAcc : 
+[2021/09/27 12:53:27] root INFO:             topk : [1, 5]
+[2021/09/27 12:53:27] root INFO: Optimizer : 
+[2021/09/27 12:53:27] root INFO:     lr : 
+[2021/09/27 12:53:27] root INFO:         learning_rate : 0.0125
+[2021/09/27 12:53:27] root INFO:         name : Cosine
+[2021/09/27 12:53:27] root INFO:         warmup_epoch : 5
+[2021/09/27 12:53:27] root INFO:     momentum : 0.9
+[2021/09/27 12:53:27] root INFO:     name : Momentum
+[2021/09/27 12:53:27] root INFO:     regularizer : 
+[2021/09/27 12:53:27] root INFO:         coeff : 1e-05
+[2021/09/27 12:53:27] root INFO:         name : L2
+[2021/09/27 12:53:29] root INFO: train with paddle 2.1.3 and device CPUPlace
+[2021/09/27 12:53:36] root INFO: 
+===========================================================
+==        PaddleClas is powered by PaddlePaddle !        ==
+===========================================================
+==                                                       ==
+==   For more info please go to the following website.   ==
+==                                                       ==
+==       https://github.com/PaddlePaddle/PaddleClas      ==
+===========================================================
+
+[2021/09/27 12:53:36] root INFO: Arch : 
+[2021/09/27 12:53:36] root INFO:     name : ResNet50_vd
+[2021/09/27 12:53:36] root INFO: DataLoader : 
+[2021/09/27 12:53:36] root INFO:     Eval : 
+[2021/09/27 12:53:36] root INFO:         dataset : 
+[2021/09/27 12:53:36] root INFO:             cls_label_path : ./dataset/val_list.txt
+[2021/09/27 12:53:36] root INFO:             image_root : ./dataset/
+[2021/09/27 12:53:36] root INFO:             name : ImageNetDataset
+[2021/09/27 12:53:36] root INFO:             transform_ops : 
+[2021/09/27 12:53:36] root INFO:                 DecodeImage : 
+[2021/09/27 12:53:36] root INFO:                     channel_first : False
+[2021/09/27 12:53:36] root INFO:                     to_rgb : True
+[2021/09/27 12:53:36] root INFO:                 ResizeImage : 
+[2021/09/27 12:53:36] root INFO:                     resize_short : 256
+[2021/09/27 12:53:36] root INFO:                 CropImage : 
+[2021/09/27 12:53:36] root INFO:                     size : 224
+[2021/09/27 12:53:36] root INFO:                 NormalizeImage : 
+[2021/09/27 12:53:36] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 12:53:36] root INFO:                     order : 
+[2021/09/27 12:53:36] root INFO:                     scale : 1.0/255.0
+[2021/09/27 12:53:36] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 12:53:36] root INFO:         loader : 
+[2021/09/27 12:53:36] root INFO:             num_workers : 0
+[2021/09/27 12:53:36] root INFO:             use_shared_memory : True
+[2021/09/27 12:53:36] root INFO:         sampler : 
+[2021/09/27 12:53:36] root INFO:             batch_size : 64
+[2021/09/27 12:53:36] root INFO:             drop_last : False
+[2021/09/27 12:53:36] root INFO:             name : DistributedBatchSampler
+[2021/09/27 12:53:36] root INFO:             shuffle : False
+[2021/09/27 12:53:36] root INFO:     Train : 
+[2021/09/27 12:53:36] root INFO:         dataset : 
+[2021/09/27 12:53:36] root INFO:             cls_label_path : ./dataset/train_list.txt
+[2021/09/27 12:53:36] root INFO:             image_root : ./dataset/
+[2021/09/27 12:53:36] root INFO:             name : ImageNetDataset
+[2021/09/27 12:53:36] root INFO:             transform_ops : 
+[2021/09/27 12:53:36] root INFO:                 DecodeImage : 
+[2021/09/27 12:53:36] root INFO:                     channel_first : False
+[2021/09/27 12:53:36] root INFO:                     to_rgb : True
+[2021/09/27 12:53:36] root INFO:                 RandCropImage : 
+[2021/09/27 12:53:36] root INFO:                     size : 224
+[2021/09/27 12:53:36] root INFO:                 RandFlipImage : 
+[2021/09/27 12:53:36] root INFO:                     flip_code : 1
+[2021/09/27 12:53:36] root INFO:                 NormalizeImage : 
+[2021/09/27 12:53:36] root INFO:                     mean : [0.485, 0.456, 0.406]
+[2021/09/27 12:53:36] root INFO:                     order : 
+[2021/09/27 12:53:36] root INFO:                     scale : 1.0/255.0
+[2021/09/27 12:53:36] root INFO:                     std : [0.229, 0.224, 0.225]
+[2021/09/27 12:53:36] root INFO:         loader : 
+[2021/09/27 12:53:36] root INFO:             num_workers : 0
+[2021/09/27 12:53:36] root INFO:             use_shared_memory : True
+[2021/09/27 12:53:36] root INFO:         sampler : 
+[2021/09/27 12:53:36] root INFO:             batch_size : 32
+[2021/09/27 12:53:36] root INFO:             drop_last : False
+[2021/09/27 12:53:36] root INFO:             name : DistributedBatchSampler
+[2021/09/27 12:53:36] root INFO:             shuffle : True
+[2021/09/27 12:53:36] root INFO: Global : 
+[2021/09/27 12:53:36] root INFO:     checkpoints : None
+[2021/09/27 12:53:36] root INFO:     class_num : 5
+[2021/09/27 12:53:36] root INFO:     device : cpu
+[2021/09/27 12:53:36] root INFO:     epochs : 100
+[2021/09/27 12:53:36] root INFO:     eval_during_train : True
+[2021/09/27 12:53:36] root INFO:     eval_interval : 10
+[2021/09/27 12:53:36] root INFO:     image_shape : [3, 224, 224]
+[2021/09/27 12:53:36] root INFO:     output_dir : ./output/
+[2021/09/27 12:53:36] root INFO:     pretrained_model : ./PaddleClas/output/ResNet50_vd/latest/latest
+[2021/09/27 12:53:36] root INFO:     print_batch_step : 10
+[2021/09/27 12:53:36] root INFO:     save_inference_dir : ./inference
+[2021/09/27 12:53:36] root INFO:     save_interval : 1
+[2021/09/27 12:53:36] root INFO:     use_visualdl : False
+[2021/09/27 12:53:36] root INFO: Infer : 
+[2021/09/27 12:53:36] root INFO:     PostProcess : 
+[2021/09/27 12:53:36] root INFO:         class_id_map_file : ./PaddleClas/dataset/labels.txt
+[2021/09/27 12:53:36] root INFO:         name : Topk
+[2021/09/27 12:53:36] root INFO:         topk : 1
+[2021/09/27 12:53:36] root INFO:     batch_size : 10
+[2021/09/27 12:53:36] root INFO:     infer_imgs : ./src/f.jpg
+[2021/09/27 12:53:36] root INFO:     transforms : 
+[2021/09/27 12:53:36] root INFO:         DecodeImage : 
+[2021/09/27 12:53:36] root INFO:             channel_first : False
+[2021/09/27 12:53:36] root INFO:             to_rgb : True
+[2021/09/27 12:53:36] root INFO:         ResizeImage : 
+[2021/09/27 12:53:36] root INFO:             resize_short : 256
+[2021/09/27 12:53:36] root INFO:         CropImage : 
+[2021/09/27 12:53:36] root INFO:             size : 224
+[2021/09/27 12:53:36] root INFO:         NormalizeImage : 
+[2021/09/27 12:53:36] root INFO:             mean : [0.485, 0.456, 0.406]
+[2021/09/27 12:53:36] root INFO:             order : 
+[2021/09/27 12:53:36] root INFO:             scale : 1.0/255.0
+[2021/09/27 12:53:36] root INFO:             std : [0.229, 0.224, 0.225]
+[2021/09/27 12:53:36] root INFO:         ToCHWImage : None
+[2021/09/27 12:53:36] root INFO: Loss : 
+[2021/09/27 12:53:36] root INFO:     Eval : 
+[2021/09/27 12:53:36] root INFO:         CELoss : 
+[2021/09/27 12:53:36] root INFO:             weight : 1.0
+[2021/09/27 12:53:36] root INFO:     Train : 
+[2021/09/27 12:53:36] root INFO:         CELoss : 
+[2021/09/27 12:53:36] root INFO:             weight : 1.0
+[2021/09/27 12:53:36] root INFO: Metric : 
+[2021/09/27 12:53:36] root INFO:     Eval : 
+[2021/09/27 12:53:36] root INFO:         TopkAcc : 
+[2021/09/27 12:53:36] root INFO:             topk : [1, 5]
+[2021/09/27 12:53:36] root INFO:     Train : 
+[2021/09/27 12:53:36] root INFO:         TopkAcc : 
+[2021/09/27 12:53:36] root INFO:             topk : [1, 5]
+[2021/09/27 12:53:36] root INFO: Optimizer : 
+[2021/09/27 12:53:36] root INFO:     lr : 
+[2021/09/27 12:53:36] root INFO:         learning_rate : 0.0125
+[2021/09/27 12:53:36] root INFO:         name : Cosine
+[2021/09/27 12:53:36] root INFO:         warmup_epoch : 5
+[2021/09/27 12:53:36] root INFO:     momentum : 0.9
+[2021/09/27 12:53:36] root INFO:     name : Momentum
+[2021/09/27 12:53:36] root INFO:     regularizer : 
+[2021/09/27 12:53:36] root INFO:         coeff : 1e-05
+[2021/09/27 12:53:36] root INFO:         name : L2
+[2021/09/27 12:53:38] root INFO: train with paddle 2.1.3 and device CPUPlace
